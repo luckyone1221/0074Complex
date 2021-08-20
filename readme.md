@@ -1,4 +1,1 @@
-1. Отключил lazy плагин. Поставил  loading="lazy"
-
-
-rm -rf node_modules
+<!-- https://github.com/luckyone1221/0074Complex -->
