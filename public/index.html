@@ -9,78 +9,189 @@
 		<link type="image/ico" href="img/favicon.ico" rel="shortcut icon"><meta name="format-detection" content="telephone=no"> 
 		<link href="css/main.min.css" rel="stylesheet"/>
 	</head>
-	<body class="main-page">
-		<div class="main-wrapper"><a class="link-modal-js" href="#modal-call">sadasdsa </a><a class="link-modal-js" href="#modal-call">sadasdsa </a>
+	<body class="main-page" data-bg="index-576.png">
+		<div class="main-wrapper">
 			<div class="menu-mobile menu-mobile--js d-lg-none">
-				<div class="toggle-menu-mobile toggle-menu-mobile--js"><span></span>
-				</div>
 				<div class="menu-mobile__inner">
-					<ul class="menu" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
-						<li class="menu-item menu-item-has-children"><a href="#" itemprop="url">О нас</a>
-							<ul class="sub-menu">
-								<li class="menu-item" itemprop="item"><a href="#" itemprop="url">Наши работы</a></li>
-								<li class="menu-item" itemprop="item"><a href="#" itemprop="url">Цены</a></li>
-								<li class="menu-item" itemprop="item"><a href="#" itemprop="url">Калькулятор</a></li>
-								<li class="menu-item" itemprop="item"><a href="#" itemprop="url">Акции</a></li>
-								<li class="menu-item" itemprop="item"><a href="#" itemprop="url">Заказать</a></li>
-							</ul>
-						</li>
-						<li class="menu-item" itemprop="item"><a href="#" itemprop="url">Наши работы</a></li>
-						<li class="menu-item" itemprop="item"><a href="#" itemprop="url">Цены</a></li>
-						<li class="menu-item" itemprop="item"><a href="#" itemprop="url">Калькулятор</a></li>
-						<li class="menu-item" itemprop="item"><a href="#" itemprop="url">Акции</a></li>
-						<li class="menu-item" itemprop="item"><a href="#" itemprop="url">Заказать</a></li>
-					</ul>
-				</div>
-			</div>
-			<!--  мобильное меню-->
-			<svg class="icon icon-telegram ">
-				<use xlink:href="img/svg/sprite.svg#telegram"></use>
-			</svg>
-			<!-- start header-->
-			<header class="header" id="header">
-			</header>
-			<!-- end header-->
-			<!-- start top-nav-->
-			<div class="top-nav block-with-lazy">
-				<div class="container">
-					<div class="row">
-						<div class="col-auto d-lg-none">
-							<div class="toggle-menu-mobile toggle-menu-mobile--js"><span></span>
+					<div class="search-bl">
+						<div class="input-group">
+							<button class="search-bl__btn" type="button">
+								<svg class="icon icon-zoom ">
+									<use xlink:href="img/svg/sprite.svg#zoom"></use>
+								</svg>
+							</button><input class="search-bl__input form-control" type="text" placeholder="Поиск по каталогу"/>
+						</div>
+					</div>
+					<div class="menu-mobile__dd-item">
+						<div class="menu-mobile__link free-dd-head-js">
+							<svg class="icon icon-catalog ">
+								<use xlink:href="img/svg/sprite.svg#catalog"></use>
+							</svg><span>Каталог продукции</span>
+						</div>
+						<div class="menu-mobile__dd-content free-dd-content-js">
+							<div class="catalog-dd catalog-dd--js">
+								<div class="catalog-dd__container container">
+									<div class="catalog-dd__links"><a href="#">Усиленные формы Taboss</a><a href="#">Пластиковые формы Alpha</a><a href="#">Формы РФ</a><a href="#">Полиуретановые формы</a><a href="#">Пигменты и красители</a><a href="#">Добавки в бетон-пластификаторы</a><a href="#">Дополнительные материалы и оборудование</a><a href="#">Малые архитектурные формы</a><a href="#">Заборные формы</a>
+									</div>
+								</div>
 							</div>
 						</div>
-						<div class="col d-none d-lg-block">
-							<ul class="menu" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
-								<li class="menu-item menu-item-has-children"><a href="#" itemprop="url">О нас</a>
-									<ul class="sub-menu">
-										<li class="menu-item" itemprop="item"><a href="#" itemprop="url">Наши работы</a></li>
-										<li class="menu-item" itemprop="item"><a href="#" itemprop="url">Цены</a></li>
-										<li class="menu-item" itemprop="item"><a href="#" itemprop="url">Калькулятор</a></li>
-										<li class="menu-item" itemprop="item"><a href="#" itemprop="url">Акции</a></li>
-										<li class="menu-item" itemprop="item"><a href="#" itemprop="url">Заказать</a></li>
-									</ul>
-								</li>
-								<li class="menu-item" itemprop="item"><a href="#" itemprop="url">Наши работы</a></li>
-								<li class="menu-item" itemprop="item"><a href="#" itemprop="url">Цены</a></li>
-								<li class="menu-item" itemprop="item"><a href="#" itemprop="url">Калькулятор</a></li>
-								<li class="menu-item" itemprop="item"><a href="#" itemprop="url">Акции</a></li>
-								<li class="menu-item" itemprop="item"><a href="#" itemprop="url">Заказать</a></li>
-							</ul>
+					</div>
+					<a class="menu-mobile__link" href="#">Прайс-лист
+					</a>
+					<ul class="menu" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
+						<li class="menu-item" itemprop="item"><a href="#" itemprop="url">Оплата и доставка</a></li>
+						<li class="menu-item" itemprop="item"><a href="#" itemprop="url">Новости</a></li>
+						<li class="menu-item" itemprop="item"><a href="#" itemprop="url">Контакты</a></li>
+					</ul>
+					<a class="menu-mobile__link" href="#">
+						<div class="menu-mobile__flag"><img loading="lazy" src="img/svg/flag-1.svg" alt=""/>
+						</div>
+					</a>
+				</div>
+			</div>
+			<!-- start header-->
+			<header class="header" id="header">
+				<!-- start top-nav-->
+				<div class="top-nav top-nav--js block-with-lazy">
+					<div class="container-lg">
+						<div class="top-nav__main-row row">
+							<div class="top-nav__left-col col col-lg-auto">
+								<a class="top-nav__logo" href="#"><img class="d-none d-lg-inline" loading="lazy" src="img/svg/logo.svg" alt=""/><img class="d-lg-none" loading="lazy" src="img/svg/logo-sm.svg" alt=""/>
+								</a>
+							</div>
+							<div class="col-auto d-lg-none">
+								<div class="top-nav__mob-btn">
+									<div class="top-nav__cart-img">
+										<svg class="icon icon-cart ">
+											<use xlink:href="img/svg/sprite.svg#cart"></use>
+										</svg>
+										<div class="top-nav__cart-ball">9
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-auto d-lg-none">
+								<a class="top-nav__mob-btn" href="#">
+									<div class="top-nav__cart-img">
+										<svg class="icon icon-tell ">
+											<use xlink:href="img/svg/sprite.svg#tell"></use>
+										</svg>
+									</div>
+								</a>
+							</div>
+							<div class="col-auto d-lg-none">
+								<div class="top-nav__mob-btn toggle-menu-mobile toggle-menu-mobile--js"><span></span>
+								</div>
+							</div>
+							<div class="top-nav__right-col col-auto col-lg d-none d-lg-block">
+								<div class="top-nav__content-boxes">
+									<div class="top-nav__c-box">
+										<div class="top-nav__top-row row align-items-center">
+											<div class="col">
+												<ul class="menu" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
+													<li class="menu-item" itemprop="item"><a href="#" itemprop="url">Оплата и доставка</a></li>
+													<li class="menu-item" itemprop="item"><a href="#" itemprop="url">Новости</a></li>
+													<li class="menu-item" itemprop="item"><a href="#" itemprop="url">Контакты</a></li>
+												</ul>
+											</div>
+											<div class="col-auto">
+												<div class="top-nav__contact-row row">
+													<div class="col-auto">
+														<div class="top-nav__c-sub-row row align-items-center">
+															<div class="col-auto">
+																<a class="top-nav__c-icon" href="tel:+74956488373"><img loading="lazy" src="img/svg/tn-soc-wa.svg" alt=""/>
+																</a>
+															</div>
+															<div class="col">
+																<div class="top-nav__c-gray">г. Щербинка
+																</div>
+																<a class="top-nav__c-number" href="tel:+74956488373">+7 (495) 648-8373
+																</a>
+															</div>
+														</div>
+													</div>
+													<div class="col-auto">
+														<div class="top-nav__c-sub-row row align-items-center">
+															<div class="col-auto">
+																<a class="top-nav__c-icon" href="tel:+74997079916"><img loading="lazy" src="img/svg/tn-soc-wa.svg" alt=""/>
+																</a>
+															</div>
+															<div class="col">
+																<div class="top-nav__c-gray">г. Ивантеева
+																</div>
+																<a class="top-nav__c-number" href="tel:+74997079916">+7 (499) 707-9916
+																</a>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="col-auto d-none d-xl-block">
+												<a class="top-nav__order-call" href="#">Заказать звонок
+												</a>
+											</div>
+										</div>
+									</div>
+									<div class="top-nav__c-box p-0 align-items-stretch">
+										<div class="top-nav__bot-row row">
+											<div class="col-auto">
+												<div class="top-nav__link catalog-btn-js">
+													<svg class="icon icon-catalog ">
+														<use xlink:href="img/svg/sprite.svg#catalog"></use>
+													</svg><span>Каталог продукции</span>
+												</div>
+											</div>
+											<div class="col-auto">
+												<a class="top-nav__link" href="#">Прайс-лист
+												</a>
+											</div>
+											<div class="col">
+												<div class="search-bl">
+													<div class="input-group">
+														<button class="search-bl__btn" type="button">
+															<svg class="icon icon-zoom ">
+																<use xlink:href="img/svg/sprite.svg#zoom"></use>
+															</svg>
+														</button><input class="search-bl__input form-control" type="text" placeholder="Поиск по каталогу"/>
+													</div>
+												</div>
+											</div>
+											<div class="col-auto">
+												<a class="top-nav__link top-nav__link--flag" href="#">
+													<div class="top-nav__flag-img"><img loading="lazy" src="img/svg/flag-1.svg" alt=""/>
+													</div>
+												</a>
+											</div>
+											<div class="col-auto">
+												<a class="top-nav__cart" href="#">
+													<div class="top-nav__cart-img">
+														<svg class="icon icon-cart ">
+															<use xlink:href="img/svg/sprite.svg#cart"></use>
+														</svg>
+														<div class="top-nav__cart-ball">9
+														</div>
+													</div>
+													<div class="top-nav__cart-val d-none d-xl-block">988 035 ₽
+													</div>
+												</a>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
 						</div>
 					</div>
 				</div>
-			</div>
-			<!-- end top-nav-->
-			<!-- start topLine-->
-			<section class="topLine section" id="topLine">
-				<div class="container">
-					<div class="section-title text-center">
-						<h2>topLine</h2>
+				<div class="catalog-dd catalog-dd--js d-none d-lg-block">
+					<div class="catalog-dd__container container">
+						<div class="catalog-dd__links"><a href="#">Усиленные формы Taboss</a><a href="#">Пластиковые формы Alpha</a><a href="#">Формы РФ</a><a href="#">Полиуретановые формы</a><a href="#">Пигменты и красители</a><a href="#">Добавки в бетон-пластификаторы</a><a href="#">Дополнительные материалы и оборудование</a><a href="#">Малые архитектурные формы</a><a href="#">Заборные формы</a>
+						</div>
 					</div>
-					<div class="row"></div>
 				</div>
-			</section>
-			<!-- end topLine-->
+				<!-- end top-nav-->
+			</header>
+			<!-- end header-->
 			<!-- start headerBlock-->
 			<div class="headerBlock section" id="headerBlock">
 				<div class="container">
@@ -91,26 +202,18 @@
 				</div>
 			</div>
 			<!-- end headerBlock-->
-			<!-- start sForm-->
-			<section class="sForm section" id="sForm">
+			<!-- start headerBlock-->
+			<div class="headerBlock section" id="headerBlock">
 				<div class="container">
 					<div class="section-title text-center">
-						<h2>sForm</h2>
+						<h2>headerBlock ds dfsdfdsfsd</h2>
 					</div>
 					<div class="row"></div>
 				</div>
-			</section>
-			<!-- end sForm-->
-			<!-- start sContact-->
-			<section class="sContact section" id="sContact">
-				<div class="container">
-					<div class="section-title text-center">
-						<h2>sContact</h2>
-					</div>
-					<div class="row"></div>
-				</div>
-			</section>
-			<!-- end sContact-->
+			</div>
+			<!-- end headerBlock-->
+			<!--+sForm()-->
+			<!--+sContact()-->
 			<footer class="footer">
 				<div class="container">
 					<div class="row">

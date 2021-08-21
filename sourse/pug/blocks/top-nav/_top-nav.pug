@@ -1,28 +1,102 @@
 mixin mob-mnu()
-	-
-		//- let path = require('path');
-		//- let fs = require('fs');
-		//- var requestURL = 'top-nav.json';
-		//- var request = new XMLHttpRequest();
-		//- request.open('GET', requestURL);
-		//- request.responseType = 'json';
-		//- let dataJson = JSON.parse(json);
-	//- h1= dataJson['lala'] 
 	+b.menu-mobile--js.d-lg-none
-		+b.toggle-menu-mobile--js
-			span
 		+e.inner
+			+tnSearch()
+			+e.dd-item
+				+e.link.free-dd-head-js
+					+icon('catalog')
+					span Каталог продукции
+				+e.dd-content.free-dd-content-js
+					+catalogDD()
+			+e.link(href="#") Прайс-лист
 			+mnu()
-	//  мобильное меню
+			+e.link(href="#")
+				+e.flag
+					img(loading="lazy" src="img/svg/flag-1.svg" alt="")
+
 mixin top-nav() 
 	// start top-nav
-	+b.top-nav.block-with-lazy
-		.container
-			.row
+	+b.top-nav--js.block-with-lazy
+		.container-lg
+			+e.main-row.row
+				+e.left-col.col.col-lg-auto
+					+e.logo(href="#")
+						img.d-none.d-lg-inline(loading="lazy" src="img/svg/logo.svg" alt="")
+						img.d-lg-none(loading="lazy" src="img/svg/logo-sm.svg" alt="")
 				.col-auto.d-lg-none
-					+b.toggle-menu-mobile--js
+					+e.mob-btn
+						+e.cart-img
+							+icon('cart')
+							+e.cart-ball 9
+				.col-auto.d-lg-none
+					+e.mob-btn(href="#")
+						+e.cart-img
+							+icon('tell')
+				.col-auto.d-lg-none
+					+e.mob-btn.toggle-menu-mobile--js
 						span
-				.col.d-none.d-lg-block
-					+mnu()
-					
+				+e.right-col.col-auto.col-lg.d-none.d-lg-block
+					+e.content-boxes
+						+e.c-box
+							+e.top-row.row.align-items-center
+								.col
+									+mnu()
+								.col-auto
+									+e.contact-row.row
+										+contactItem('г. Щербинка', '+7 (495) 648-8373', '+74956488373')
+										+contactItem('г. Ивантеева', '+7 (499) 707-9916', '+74997079916')
+								.col-auto.d-none.d-xl-block
+									+e.order-call(href="#") Заказать звонок
+						+e.c-box.p-0.align-items-stretch
+							+e.bot-row.row
+								.col-auto
+									+e.link.catalog-btn-js
+										+icon('catalog')
+										span Каталог продукции
+								.col-auto
+									+e.link(href="#") Прайс-лист
+								.col
+									+tnSearch()
+								.col-auto
+									+e.link--flag(href="#")
+										+e.flag-img
+											img(loading="lazy" src="img/svg/flag-1.svg" alt="")
+								.col-auto
+									+e.cart(href="#")
+										+e.cart-img
+											+icon('cart')
+											+e.cart-ball 9
+										+e.cart-val.d-none.d-xl-block 988 035 ₽
+	+catalogDD('d-none d-lg-block')
 	// end top-nav
+
+mixin catalogDD(addClasses='')
+	+b.catalog-dd--js(class=addClasses)
+		+e.container.container
+			+e.links
+				a(href="#") Усиленные формы Taboss
+				a(href="#") Пластиковые формы Alpha
+				a(href="#") Формы РФ
+				a(href="#") Полиуретановые формы
+				a(href="#") Пигменты и красители
+				a(href="#") Добавки в бетон-пластификаторы
+				a(href="#") Дополнительные материалы и оборудование
+				a(href="#") Малые архитектурные формы
+				a(href="#") Заборные формы
+
+mixin tnSearch()
+	+b.search-bl
+		.input-group
+			+e.btn(type="button")
+				+icon('zoom')
+			+e.INPUT.input.form-control(type='text' placeholder="Поиск по каталогу")
+
+mixin contactItem(grayTxt, tel, telHref)
+	.col-auto
+		+e.c-sub-row.row.align-items-center
+			.col-auto
+				+e.c-icon(href=`tel:${telHref}`)
+					img(loading="lazy" src="img/svg/tn-soc-wa.svg" alt="")
+			.col
+				+e.c-gray=grayTxt
+				+e.c-number(href=`tel:${telHref}`)=tel

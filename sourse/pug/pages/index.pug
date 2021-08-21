@@ -7,25 +7,18 @@ include ../blocks/sTEst00/_sTEst00.pug
 
 block variables
 	- let  mainPage= 'main-page' 
-	- let  bg= null
+	- let  bg='index-576.png'
 
 block title
 	- let  title= 'title'
 	title= title
 block pagecontent 
-	a.link-modal-js(href="#modal-call") sadasdsa 
-	a.link-modal-js(href="#modal-call") sadasdsa 
+	//-a.link-modal-js(href="#modal-call") sadasdsa
 	+mob-mnu()
-	+icon("telegram")
 	+header()
-	+top-nav()
-	
-	+topLine()
+		+top-nav()
 	+headerBlock()
-	+sForm()
-	+sContact()
+	+headerBlock()
+	//+sForm()
+	//+sContact()
 	+footer()
-      
-
-
-

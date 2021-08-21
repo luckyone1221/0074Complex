@@ -1,4 +1,4 @@
-$em-base: 20px;
+$em-base: 16px;
 $small: rem(14);
 $url: '../img/';
 $path2: '@2x/';
@@ -35,12 +35,13 @@ $utilities: ("opacity": (
 
 // scss-docs-start gray-color-variables
 $white: #fff !default;
-$gray-100: #f8f9fa !default;
+$gray-100: #EAEAEA;
+$gray-110: #F6F6F6;
 $gray-200: #e9ecef !default;
 $gray-300: #dee2e6 !default;
 $gray-400: #ced4da !default;
 $gray-500: #adb5bd !default;
-$gray-600: #6c757d !default;
+$gray-600: #7E7E7E;
 $gray-700: #495057 !default;
 $gray-800: #343a40 !default;
 $gray-900: #212529 !default;
@@ -69,7 +70,7 @@ $pink: #d63384 !default;
 $red: #dc3545 !default;
 $orange: #fd7e14 !default;
 $yellow: #ffc107 !default;
-$green: #198754 !default;
+$green: #B5C830;
 $teal: #20c997 !default;
 $cyan: #0dcaf0 !default;
 // scss-docs-end color-variables
@@ -91,7 +92,7 @@ $colors: ("blue": $blue,
 // scss-docs-end colors-map
 
 // scss-docs-start theme-color-variables
-$primary: $blue !default;
+$primary: $green;
 $secondary: $gray-600 !default;
 $success: $green !default;
 $info: $cyan !default;
@@ -198,7 +199,7 @@ $position-values: (0: 0,
 // Settings for the `<body>` element.
 
 $body-bg: $white !default;
-$body-color: $gray-900 !default;
+$body-color: #262525;
 $body-text-align: null !default;
 
 // Utilities maps
@@ -249,7 +250,7 @@ $paragraph-margin-bottom: 1rem !default;
 $grid-breakpoints: (xs: 0,
   sm: 576px,
   md: 768px,
-  lg: 992px,
+  lg: 975px,
   xl: 1200px,
   xxl: 1400px) !default;
 // scss-docs-end grid-breakpoints
@@ -263,11 +264,11 @@ $grid-breakpoints: (xs: 0,
 // Define the maximum width of `.container` for different screen sizes.
 
 // scss-docs-start container-max-widths
-$container-max-widths: (sm: 540px,
-  md: 720px,
+$container-max-widths: (sm: 570px,
+  md: 750px,
   lg: 960px,
   xl: 1140px,
-  xxl: 1320px) !default;
+  xxl: 1310px) !default;
 // scss-docs-end container-max-widths
 
 @include _assert-ascending($container-max-widths, "$container-max-widths");
@@ -278,14 +279,14 @@ $container-max-widths: (sm: 540px,
 // Set the number of columns and specify the width of the gutters.
 
 $grid-columns: 12 !default;
-$grid-gutter-width: 1.5rem !default;
+$grid-gutter-width: 30px !default;
 $grid-row-columns: 6 !default;
 
 $gutters: $spacers !default;
 
 // Container padding
 
-$container-padding-x: $grid-gutter-width * .5 !default;
+$container-padding-x: 15px;
 
 
 // Components

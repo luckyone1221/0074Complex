@@ -1,17 +1,7 @@
-
-$h: em(2);
-
 .toggle-menu-mobile {
-	display: block;
-	height: $h* 12;
 	position: relative;
-	color: $primary;
-	font-size: 32px;
-	width: 1em;
+	color: $body-color;
 	cursor: pointer;
-	&.on {
-		color: #ffffff;
-	}
 
 	span:after,
 	span:before {
@@ -25,13 +15,25 @@ $h: em(2);
 	}
 
 	span:before {
-
-
-		top: $h * 2;
+		top: rem(8);
+		@include media-breakpoint-up(md){
+			top: rem(7);
+		}
+	}
+	&:not(.on){
+		span:before{
+			width: 50%;
+			left: 50%;
+		}
 	}
 
+
 	span:after {
-		bottom: $h * 2;
+		width: 50%;
+		bottom: rem(8);
+		@include media-breakpoint-up(md){
+			bottom: rem(7);
+		}
 	}
 
 	span { 
@@ -41,19 +43,18 @@ $h: em(2);
 	span,
 	span:after,
 	span:before {
-		// width: 32px;
-		width: 1em;
-		height: $h;
+		height: 3px;
+		width: rem(32);
+		@include media-breakpoint-up(md){
+			height: 2px;
+			width: rem(25);
+		}
+
 		background-color: currentColor;
 		transition: all 0.3s;
 		backface-visibility: hidden;
-		border-radius: 6px;
 		transform-origin: 50% 50%;
 	}
-
-	// &.on {
-	// 	// opacity: 0;
-	// }
 
 	&.on span {
 		background-color: transparent;
@@ -61,10 +62,8 @@ $h: em(2);
 
 	&.on span:after,
 	&.on span:before {
-
 		top: 0;
 		bottom: 0;
-		
 	}
 
 	&.on span:before {
@@ -79,23 +78,21 @@ $h: em(2);
 .menu-mobile {
 	position: fixed !important;
 	z-index: 999;
-	max-width: 85%;
-	height: calc(var(--vh, 1vh) * 100);
-	width: 280px;
-	top: 0;
-	// left: 0;
+	max-width: 95%;
+	height: calc(var(--vh, 1vh) * 100 - var(--header-h));
+	top: var(--header-h);
+
+	width: rem(496);
 	right: 0;
-	background-color: #c3c3c3;
+	background: $white;
 	&:not(.active){
 		transform: translate3d(120%, 0,0);
 		--opacity: 0;
-
 	}
-	@include mt(.6s);
+	@include mt(.4s);
 	will-change: transform;
 
 	&__inner {
-		padding: rem(20) 0;
 		overflow-x: hidden;
 		overflow-y: auto;
 		-webkit-overflow-scrolling: touch;
@@ -103,6 +100,13 @@ $h: em(2);
 		@include mt(.3s);
 		transition-delay: .4s;
 		opacity: var(--opacity);
+
+		font-size: rem(18);
+		line-height: calc(21/18);
+
+		& > *:last-child{
+			border-bottom: none;
+		}
 	}
 
 	&.active { 
@@ -110,50 +114,90 @@ $h: em(2);
 			opacity: 1;
 		}
 	}
+	//
+	--link-py: #{rem(20)};
+	--link-px: #{rem(20)};
+	--link-icon-fs: #{rem(20)};
+	--link-icon-me: #{rem(15)};
 
-	.toggle-menu-mobile {
-		// position: relative;
-		cursor: pointer;
-		margin-left: -15%;
-		position: absolute;
-		opacity: 0;
-		left: 0;
-		right: auto;
-		color: #FFF;
-		top: 10px;
-		z-index: 9999;
-		background-color: transparent;
+	.search-bl{
+		padding: calc(var(--link-py) - var(--inp-py)) var(--link-px);
+		--inp-py: #{rem(10)};
+		border-bottom: 1px solid $gray-100;
 
-		span,
-		span:after,
-		span:before {
-			background-color: #FFF;
+		.input-group{
+
 		}
+		&__btn{
+			@extend .btn;
+			order: 1;
+			padding: 0;
+			border: none!important;
+			width: rem(20);
 
-		&.on {
-			opacity: 1;
+			.icon{
+				font-size: rem(20);
+				color: $primary;
+			}
+		}
+		&__input{
+			border: none;
+			padding: var(--inp-py) rem(12);
+		}
+		&__{}
+	}
 
-			span {
-				background-color: transparent;
+	&__link{
+		cursor: pointer;
+		padding: var(--link-py) var(--link-px);
+		border-bottom: 1px solid $gray-100;
+		font-weight: 600;
+		color: $body-color!important;
+
+		display: flex;
+		align-items: center;
+
+		.icon{
+			color: $primary;
+			font-size: rem(20);
+			margin-right: rem(15);
+		}
+	}
+	.menu{
+		padding: 0;
+		margin: 0;
+		list-style: none;
+
+		.menu-item{
+			a{
+				display: block;
+				padding: var(--link-py) var(--link-px);
+				border-bottom: 1px solid $gray-100;
+				font-weight: 500;
+				color: $body-color!important;
 			}
 		}
 	}
+	&__flag{
+		width: rem(40);
+		height: rem(40);
 
-	ul {
-		position: relative;
-	}
+		display: flex;
+		align-items: center;
+		justify-content: center;
 
-	li {
-		display: block;
-		margin: 0;
-		border-top: 1px solid rgba(255, 255, 255, .13);
-
-		a {
-			// font-size: 16px;
-
-			padding: 10px;
-			display: block;
-
+		img{
+			width: 100%;
+			height: auto;
+			max-height: 100%;
 		}
 	}
+
+	&__dd-content{
+		display: none;
+		&.active{
+			display: block;
+		}
+	}
+
 }
