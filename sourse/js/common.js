@@ -220,7 +220,7 @@ function eventHandler() {
 	JSCCommon.mobileMenu();
 	// JSCCommon.inputMask();
 	// JSCCommon.sendForm();
-	// JSCCommon.heightwindow();
+	JSCCommon.heightwindow();
 	// JSCCommon.toggleShow(".catalog-block__toggle--desctop", '.catalog-block__dropdown');
 	// JSCCommon.animateScroll();
 	
@@ -231,26 +231,6 @@ function eventHandler() {
 	if (screenName && x.includes("localhost:30")) {
 		document.body.insertAdjacentHTML("beforeend", `<div class="pixel-perfect" style="background-image: url(screen/${screenName});"></div>`);
 	}
-
-
-	function setFixedNav() {
-		let topNav = document.querySelector('.top-nav--js');
-		if (!topNav) return;
-		window.scrollY > 0
-			? topNav.classList.add('fixed')
-			: topNav.classList.remove('fixed');
-	}
-	function whenResize() {
-		setFixedNav();
-	}
-
-	window.addEventListener('scroll', () => {
-		setFixedNav();
-	}, { passive: true })
-	window.addEventListener('resize', () => {
-		whenResize();
-	}, { passive: true });
-	whenResize();
 
 
 	let defaultSl = {
@@ -290,6 +270,11 @@ function eventHandler() {
 	let topNav = document.querySelector(".top-nav--js");
 	function calcHeaderHeight() {
 		document.documentElement.style.setProperty('--header-h', `${topNav.offsetHeight}px`);
+
+		if (!topNav) return;
+		window.scrollY > 0
+			? topNav.classList.add('fixed')
+			: topNav.classList.remove('fixed');
 	}
 	window.addEventListener('resize', calcHeaderHeight, { passive: true });
 	window.addEventListener('scroll', calcHeaderHeight, { passive: true });

@@ -231,8 +231,8 @@ function eventHandler() {
 
 	JSCCommon.mobileMenu(); // JSCCommon.inputMask();
 	// JSCCommon.sendForm();
-	// JSCCommon.heightwindow();
-	// JSCCommon.toggleShow(".catalog-block__toggle--desctop", '.catalog-block__dropdown');
+
+	JSCCommon.heightwindow(); // JSCCommon.toggleShow(".catalog-block__toggle--desctop", '.catalog-block__dropdown');
 	// JSCCommon.animateScroll();
 	// JSCCommon.CustomInputFile(); 
 
@@ -244,27 +244,6 @@ function eventHandler() {
 		document.body.insertAdjacentHTML("beforeend", "<div class=\"pixel-perfect\" style=\"background-image: url(screen/".concat(screenName, ");\"></div>"));
 	}
 
-	function setFixedNav() {
-		let topNav = document.querySelector('.top-nav--js');
-		if (!topNav) return;
-		window.scrollY > 0 ? topNav.classList.add('fixed') : topNav.classList.remove('fixed');
-	}
-
-	function whenResize() {
-		setFixedNav();
-	}
-
-	window.addEventListener('scroll', () => {
-		setFixedNav();
-	}, {
-		passive: true
-	});
-	window.addEventListener('resize', () => {
-		whenResize();
-	}, {
-		passive: true
-	});
-	whenResize();
 	let defaultSl = {
 		spaceBetween: 0,
 		lazy: {
@@ -299,6 +278,8 @@ function eventHandler() {
 
 	function calcHeaderHeight() {
 		document.documentElement.style.setProperty('--header-h', "".concat(topNav.offsetHeight, "px"));
+		if (!topNav) return;
+		window.scrollY > 0 ? topNav.classList.add('fixed') : topNav.classList.remove('fixed');
 	}
 
 	window.addEventListener('resize', calcHeaderHeight, {

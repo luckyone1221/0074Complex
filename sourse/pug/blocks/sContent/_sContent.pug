@@ -2,8 +2,160 @@ mixin sContent()
 	// start sContent
 	+b.SECTION.sContent.section#sContent&attributes(attributes)
 		.container
-			+b.section-title.text-center
-				h2 sContent
-				
-			.row
+			.d-none
+				+sContentItem({
+					imgNum: 1,
+					whiteImg: 1,
+					addClasses: '',
+					title: '',
+					links: [
+						'',
+						'',
+						'',
+						'',
+						'',
+					],
+				})
+			//-
+			+sContentItem({
+				imgNum: 1,
+				whiteImg: 1,
+				addClasses: 'white-item',
+				title: 'Усиленные формы TABOSS',
+				links: [
+					'Камни облицовочные',
+					'Квадраты',
+					'Малые формы',
+					'Серия Декор',
+				],
+			})
+			//remove margin-alt from __item, love pp
+			+sContentItem({
+				imgNum: 2,
+				whiteImg: 2,
+				addClasses: 'item-reverse margin-alt',
+				title: 'Пластиковые формы ALPHA',
+				links: [
+					'Камни облицовочные',
+					'Квадраты',
+					'Малые формы',
+					'Серия Декор',
+					'Средние формы',
+				],
+			})
+			+e.item
+				+e.img-row.row
+					+sContentImgItem({
+						imgNum: 3,
+						whiteImg: 3,
+						txt: 'Формы РФ',
+					})
+					+sContentImgItem({
+						imgNum: 4,
+						whiteImg: 3,
+						txt: 'Полиуретановые формы',
+					})
+			+e.item
+				+e.img-row--plate.row
+					+sContentImgPlate({
+						imgNum: 1,
+						txt: 'Пигменты и красители',
+						linkBootClass: 'col-xl-12 col-auto',
+						links: [
+							'Пигменты Китай',
+							'Пигменты Россия',
+							'Пигменты Чехия',
+						],
+					})
+					+sContentImgPlate({
+						imgNum: 2,
+						txt: 'Добавки в бетон',
+						bootClasses: '',
+						linkBootClass: '',
+						links: [
+							'Пластификаторы',
+							'Противоморозные добавки в бетон',
+						],
+					})
+					+sContentImgPlate({
+						imgNum: 1,
+						txt: 'Дополнительные материалы и оборудование',
+						bootClasses: 'col-lg-4',
+						linkBootClass: 'col-auto col-lg-12 col-xl-auto',
+						links: [
+							'Оборудование',
+							'Растворители',
+							'Упаковочные матерал',
+						],
+					})
+			+sContentItem({
+				imgNum: 5,
+				title: 'Малые архитектурные формы',
+				addClasses: 'item-long',
+				links: [
+					'Балюстрады',
+					'Вазы и цветочницы',
+					'Крышки',
+					'Шары',
+					'Полуколонны',
+					'Постаменты',
+					'Скамейки',
+					'Скульптуры',
+					'Травницы и бордюры',
+					'Тумбы дорожные',
+					'Урны для мусора',
+					'Фонтаны',
+				],
+			})
+			+sContentItem({
+				imgNum: 6,
+				whiteImg: 4,
+				addClasses: 'item-reverse item-long',
+				title: 'Заборные формы',
+				links: [
+					'Декоративные формы ограждения',
+					'Двухсторонние формы',
+					'Односторонние формы',
+					'Формы оголовников',
+					'Формы ограждений из камня',
+					'Формы столбов для забора',
+					'Столбы',
+				],
+			})
 	// end sContent
+
+mixin sContentImgPlate(data)
+	div(class=`${data.bootClasses || 'col-md-6 col-lg-4'}`)
+		+e.img-box--plate(href="#")
+			img(loading="lazy" src=`img/@2x/sContent-plate-${data.imgNum}.jpg` alt="")
+		+e.i-txt--plate(href="#")=data.txt
+		//leave only col-auto, love pp
+		+e.links-row--plate.row
+			-for (let link of data.links)
+				div(class=`${data.linkBootClass || 'col-auto'}`)
+					+e.link(href="#")=link
+
+mixin sContentItem(data)
+	+e.item(class=`${data.addClasses || ''}`)
+		+e.i-row.row.gx-0
+			+e.content-col.col-lg-auto
+				+e.H2.i-title=data.title
+				+e.links-row.row
+					-for (let link of data.links)
+						.col-auto
+							+e.link(href="#")=link
+			.col-lg
+				+e.img-box
+					img(loading="lazy" src=`img/@2x/sContent-item-${data.imgNum}.jpg` alt="")
+					if data.whiteImg
+						+e.white-img
+							img(loading="lazy" src=`img/@2x/sContent-item-white-${data.whiteImg}.png` alt="")
+
+mixin sContentImgItem(data)
+	.col-md-6
+		+e.img-box--mh-0(href="#")
+			img(loading="lazy" src=`img/@2x/sContent-item-${data.imgNum}.jpg` alt="")
+			if data.whiteImg
+				+e.white-img
+					img(loading="lazy" src=`img/@2x/sContent-item-white-${data.whiteImg}.png` alt="")
+		+e.i-txt(href="#")=data.txt

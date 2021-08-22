@@ -1,10 +1,10 @@
 mixin headerBlock()
 	// start headerBlock
-	+b.headerBlock.section#headerBlock&attributes(attributes)
+	+b.SECTION.headerBlock.section#headerBlock&attributes(attributes)
+		+e.bg
+			img(loading="lazy" src="img/@2x/headerBl-bg.jpg" alt="")
 		.container
 			+b.section-title.text-center
-				h2 headerBlock ds dfsdfdsfsd
-
-			.row
-						
+				h1 Продукция для производства изделий из&#160;бетона
+				p Более 15 лет наша компания успешно сотрудничает с крупнейшими производителями комплектующих для данного производства и является ведущей компанией по поставкам данной продукции на рынок Российской Федерации
 	// end headerBlock
