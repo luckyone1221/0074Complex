@@ -30,6 +30,14 @@
   @include media-breakpoint-up(xl){
     --img-h: #{rem(410)};
   }
+  //
+  --pugin-mb: #{rem(30)};
+  @include media-breakpoint-up(md){
+    --pugin-mb: #{rem(40)};
+  }
+  @include media-breakpoint-up(xl){
+    --pugin-mb: #{rem(60)};
+  }
 
 
   //

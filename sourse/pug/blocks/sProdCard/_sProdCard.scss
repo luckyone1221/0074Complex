@@ -238,34 +238,16 @@
 			}
 		}
 		ul{
-			list-style: none;
-			padding: 0;
+			@extend .dot-ul;
 			margin: 0 0 rem(20);
 
 			li{
-				display: flex;
-				align-items: baseline;
-
-				&:before{
-					flex-shrink: 0;
-					content: '';
-					width: rem(5);
-					height: rem(5);
-					margin-right: rem(10);
-					border-radius: 50%;
-					background-color: $primary;
-				}
-
 				margin-bottom: rem(8);
 				@include media-breakpoint-up(md){
 					margin-bottom: rem(17);
 				}
 				@include media-breakpoint-up(xl){
 					margin-bottom: rem(15);
-				}
-
-				&:last-child{
-					margin-bottom: 0;
 				}
 			}
 
