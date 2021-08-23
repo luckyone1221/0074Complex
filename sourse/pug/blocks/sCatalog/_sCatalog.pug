@@ -9,12 +9,18 @@ mixin sCatalog(data)
 					+breadcrumb(...data.breadCrumbs)
 					+b.section-title
 						h1=data.title
+					+e.catalog-btn.sb-btn-js.toggle-sb-js.d-lg-none
+						+icon('catalog')
+						span Каталог продукции
 					+e.content
 						block
 	// end sCatalog
 
 mixin sCatalogSidebar()
-	+b.cat-sb.cat-sb-dd-group-js
+	+b.cat-sb--js
+		+e.close-btn.toggle-sb-js.d-lg-none
+			+icon('cross')
+			span Закрыть
 		+e.dd-items
 			+sCatalogSidebarItem('Усиленные формы Taboss')
 			+sCatalogSidebarItem('Пластиковые формы Alpha', 'active')

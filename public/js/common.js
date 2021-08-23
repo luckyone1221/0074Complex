@@ -1,11 +1,5 @@
 "use strict";
 
-function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) { symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); } keys.push.apply(keys, symbols); } return keys; }
-
-function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
-
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
 let div = document.createElement('div');
 div.style.overflowY = 'scroll';
 div.style.width = '50px';
@@ -242,44 +236,20 @@ function eventHandler() {
 
 	if (screenName && x.includes("localhost:30")) {
 		document.body.insertAdjacentHTML("beforeend", "<div class=\"pixel-perfect\" style=\"background-image: url(screen/".concat(screenName, ");\"></div>"));
-	}
+	} //luckyoneJs
 
-	let defaultSl = {
-		spaceBetween: 0,
-		lazy: {
-			loadPrevNext: true
-		},
-		watchOverflow: true,
-		spaceBetween: 0,
-		loop: true,
-		navigation: {
-			nextEl: '.swiper-button-next',
-			prevEl: '.swiper-button-prev'
-		},
-		pagination: {
-			el: ' .swiper-pagination',
-			type: 'bullets',
-			clickable: true // renderBullet: function (index, className) {
-			// 	return '<span class="' + className + '">' + (index + 1) + '</span>';
-			// }
 
-		}
-	};
-	const swiper4 = new Swiper('.sBanners__slider--js', _objectSpread(_objectSpread({}, defaultSl), {}, {
-		slidesPerView: 'auto',
-		freeMode: true,
-		loopFillGroupWithBlank: true,
-		touchRatio: 0.2,
-		slideToClickedSlide: true,
-		freeModeMomentum: true
-	})); //luckyoneJs
-
+	let sbBtn = document.querySelector(".sb-btn-js");
 	let topNav = document.querySelector(".top-nav--js");
 
 	function calcHeaderHeight() {
 		document.documentElement.style.setProperty('--header-h', "".concat(topNav.offsetHeight, "px"));
 		if (!topNav) return;
-		window.scrollY > 0 ? topNav.classList.add('fixed') : topNav.classList.remove('fixed');
+		window.scrollY > 0 ? topNav.classList.add('fixed') : topNav.classList.remove('fixed'); //
+
+		if (sbBtn) {
+			document.documentElement.style.setProperty('--cat-btn-h', "".concat(sbBtn.offsetHeight, "px")); // let scrolledOverBtn = sbBtnWrap.getBoundingClientRect().top + sbBtnWrap.offsetHeight - topNav.offsetHeight < 0;
+		}
 	}
 
 	window.addEventListener('resize', calcHeaderHeight, {
@@ -345,11 +315,12 @@ function eventHandler() {
 				myMap.geoObjects.add(myPlacemark);
 			});
 		}, 1000);
-	}, 2000); //footer
+	}, 2000); //
+	//footer
 
 	$('.set-curr-year-js').each(function () {
 		this.innerHTML = new Date().getFullYear();
-	});
+	}); //
 
 	function makeDDGroup(ArrSelectors) {
 		for (let parentSelect of ArrSelectors) {
@@ -379,8 +350,12 @@ function eventHandler() {
 		}
 	}
 
-	makeDDGroup(['.cat-sb-dd-group-js']); //
-	//end luckyoneJs
+	makeDDGroup(['.cat-sb--js']); //
+
+	$('.toggle-sb-js').click(function () {
+		$('body').toggleClass('fixed2');
+		$('.cat-sb--js').toggleClass('active');
+	}); //end luckyoneJs
 	// modal window
 }
 

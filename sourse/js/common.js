@@ -232,41 +232,9 @@ function eventHandler() {
 		document.body.insertAdjacentHTML("beforeend", `<div class="pixel-perfect" style="background-image: url(screen/${screenName});"></div>`);
 	}
 
-
-	let defaultSl = {
-		spaceBetween: 0,
-		lazy: {
-			loadPrevNext: true,
-		},
-		watchOverflow: true,
-		spaceBetween: 0,
-		loop: true,
-		navigation: {
-			nextEl: '.swiper-button-next',
-			prevEl: '.swiper-button-prev',
-		},
-		pagination: {
-			el: ' .swiper-pagination',
-			type: 'bullets',
-			clickable: true,
-			// renderBullet: function (index, className) {
-			// 	return '<span class="' + className + '">' + (index + 1) + '</span>';
-			// }
-		},
-	}
-
-	const swiper4 = new Swiper('.sBanners__slider--js', {
-		// slidesPerView: 5,
-		...defaultSl,
-		slidesPerView: 'auto',
-		freeMode: true,
-		loopFillGroupWithBlank: true,
-		touchRatio: 0.2,
-		slideToClickedSlide: true,
-		freeModeMomentum: true,
-	});
-
 	//luckyoneJs
+	let sbBtn = document.querySelector(".sb-btn-js");
+
 	let topNav = document.querySelector(".top-nav--js");
 	function calcHeaderHeight() {
 		document.documentElement.style.setProperty('--header-h', `${topNav.offsetHeight}px`);
@@ -275,6 +243,13 @@ function eventHandler() {
 		window.scrollY > 0
 			? topNav.classList.add('fixed')
 			: topNav.classList.remove('fixed');
+
+		//
+		if (sbBtn) {
+			document.documentElement.style.setProperty('--cat-btn-h', `${sbBtn.offsetHeight}px`);
+
+			// let scrolledOverBtn = sbBtnWrap.getBoundingClientRect().top + sbBtnWrap.offsetHeight - topNav.offsetHeight < 0;
+		}
 	}
 	window.addEventListener('resize', calcHeaderHeight, { passive: true });
 	window.addEventListener('scroll', calcHeaderHeight, { passive: true });
@@ -343,11 +318,13 @@ function eventHandler() {
 		}, 1000);
 
 	}, 2000);
+	//
 
 	//footer
 	$('.set-curr-year-js').each(function (){
 		this.innerHTML = new Date().getFullYear();
 	});
+	//
 	function makeDDGroup(ArrSelectors){
 		for (let parentSelect of ArrSelectors){
 			let parent = document.querySelector(parentSelect);
@@ -378,11 +355,14 @@ function eventHandler() {
 		}
 	}
 	makeDDGroup([
-		'.cat-sb-dd-group-js',
+		'.cat-sb--js',
 	]);
+
 	//
-
-
+	$('.toggle-sb-js').click(function (){
+		$('body').toggleClass('fixed2');
+		$('.cat-sb--js').toggleClass('active');
+	});
 	//end luckyoneJs
 
 	// modal window

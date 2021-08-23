@@ -1,5 +1,9 @@
 .footer {
 	margin-top: auto;
+	padding-bottom: var(--cat-btn-h, 0px);
+	@include media-breakpoint-up(lg){
+		padding-bottom: 0;
+	}
 
 	font-size: rem(18);
 	line-height: calc(21/18);

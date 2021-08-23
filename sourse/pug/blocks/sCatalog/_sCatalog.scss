@@ -1,6 +1,6 @@
 // start .sCatalog
 .sCatalog {
-	--sPT: #{rem(20)};
+	--sPT: #{rem(21)};
 	--sPB: #{rem(78)};
 	--sTPB: #{rem(20)};
 	@include media-breakpoint-up(md){
@@ -20,6 +20,8 @@
 	}
 
 	&__row{
+		//--bs-gutter-y: #{rem(20)};
+
 		@include media-breakpoint-up(lg){
 			--bs-gutter-x: #{rem(16)};
 		}
@@ -37,13 +39,78 @@
 			}
 		}
 	}
-	&__{}
+
+	//--
+	&__catalog-btn{
+		@extend .btn;
+		@extend .btn-success;
+
+		width: 100%;
+
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		color: $body-color!important;
+
+		.icon{
+			color: $body-color!important;
+			font-size: rem(24);
+			margin-right: rem(16);
+		}
+
+		position: fixed;
+		z-index: 800;
+		left: 0;
+		bottom: 0;
+		margin: 0;
+
+		width: 100%;
+		height: auto;
+	}
 	&__{}
 	&__{}
 	&__{}
 } // end.sCatalog
 
 .cat-sb{
+	@include media-breakpoint-down(lg){
+		@include mt();
+		background-color: $white;
+		position: fixed;
+		z-index: 1300;
+		top: 0;
+
+		left: -120vw;
+		&.active{
+			left: 0;
+		}
+
+		width: 100%;
+		height: calc(var(--vh, 1vh) * 100);
+		overflow-y: auto;
+		padding: rem(20);
+	}
+
+	&__close-btn{
+		@extend .btn;
+		@extend .btn-success;
+
+		width: 100%;
+		margin-bottom: rem(20);
+
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		color: $body-color!important;
+
+		.icon{
+			color: $body-color!important;
+			font-size: rem(20);
+			margin-right: rem(16);
+		}
+	}
 	&__dd-items{
 
 	}
@@ -69,7 +136,10 @@
 			background: $gray-120;
 		}
 
-		padding: rem(19);
+		padding: rem(16.25) rem(16);
+		@include media-breakpoint-up(xl){
+			padding: rem(20) rem(19);
+		}
 
 		&--dd-head{
 			display: flex;
