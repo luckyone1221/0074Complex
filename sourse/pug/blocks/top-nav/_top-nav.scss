@@ -7,11 +7,12 @@
 	left: 0;
 	width: 100%;
 
-	@include mt();
-	box-shadow: 0px 5px 10px rgba(48, 47, 47, 0);
-	&.fixed{
-		box-shadow: 0px 5px 10px rgba(48, 47, 47, 0.15);
-	}
+	//@include mt();
+	//box-shadow: 0px 5px 10px rgba(48, 47, 47, 0);
+	//&.fixed{
+	//	box-shadow: 0px 5px 10px rgba(48, 47, 47, 0.15);
+	//}
+	box-shadow: 0px 5px 10px rgba(48, 47, 47, 0.15);
 
 	padding: rem(13) 0;
 	@include media-breakpoint-up(md){
@@ -146,55 +147,6 @@
 	&__contact-row{
 		--bs-gutter-x: inherit;
 	}
-	&__c-sub-row{
-		--bs-gutter-x: #{rem(10)};
-		@include media-breakpoint-up(xl){
-			--bs-gutter-x: #{rem(15)};
-		}
-
-	}
-	&__c-icon{
-		width: rem(24);
-		height: rem(24);
-
-		display: flex;
-		align-items: center;
-		justify-content: center;
-
-		img{
-			width: auto;
-			height: auto;
-			max-height: 100%;
-			max-width: 100%;
-		}
-	}
-	&__c-gray{
-		color: $gray-600;
-
-		margin: 0 0 rem(10);
-		@include media-breakpoint-up(md){
-			margin: 0 rem(15) 0 0;
-		}
-		@include media-breakpoint-up(lg){
-			margin: 0 0 rem(4);
-		}
-		@include media-breakpoint-up(xl){
-			margin: 0 0 rem(5);
-		}
-	}
-	&__c-number{
-		display: inline-block;
-		font-weight: 600;
-
-		@include media-breakpoint-down(md){
-			line-height: calc(24/20);
-		}
-
-		color: $body-color;
-		&:hover{
-			color: $primary;
-		}
-	}
 	&__order-call{
 		display: inline-block;
 		font-weight: 600;
@@ -278,7 +230,7 @@
 		}
 		&__btn{
 			@extend .btn;
-			padding: 0;
+			padding: 0!important;
 			border: none!important;
 			width: rem(24);
 
@@ -288,11 +240,13 @@
 			}
 		}
 		&__input{
+			min-height: 0!important;
 			border: none;
+			line-height: 1.5;
 
-			padding: rem(10) rem(12);
+			padding: rem(10) rem(12) !important;
 			@include media-breakpoint-up(xl){
-				padding: rem(10) rem(14);
+				padding: rem(10) rem(14) !important;
 			}
 		}
 		&__{}
@@ -488,4 +442,55 @@
 	//
 	&__{}
 	&__{}
+}
+
+//
+.cont-item{
+	--bs-gutter-x: #{rem(10)};
+	@include media-breakpoint-up(xl){
+		--bs-gutter-x: #{rem(15)};
+	}
+
+	&__icon{
+		width: rem(24);
+		height: rem(24);
+
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		img{
+			width: auto;
+			height: auto;
+			max-height: 100%;
+			max-width: 100%;
+		}
+	}
+	&__gray{
+		color: $gray-600;
+
+		margin: 0 0 rem(10);
+		@include media-breakpoint-up(md){
+			margin: 0 rem(15) 0 0;
+		}
+		@include media-breakpoint-up(lg){
+			margin: 0 0 rem(4);
+		}
+		@include media-breakpoint-up(xl){
+			margin: 0 0 rem(5);
+		}
+	}
+	&__number{
+		display: inline-block;
+		font-weight: 600;
+
+		@include media-breakpoint-down(md){
+			line-height: calc(24/20);
+		}
+
+		color: $body-color;
+		&:hover{
+			color: $primary;
+		}
+	}
 }

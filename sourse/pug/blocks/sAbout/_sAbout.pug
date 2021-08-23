@@ -2,8 +2,46 @@ mixin sAbout(data)
 	// start sAbout
 	+b.SECTION.sAbout.section#sAbout&attributes(attributes)
 		.container
-			+b.section-title.text-center
-				h2 sAbout
-				
-			.row
+			+e.top-row.row.gx-0
+				+e.left-col.col-lg-6
+					+b.section-title
+						h2 О компании
+						p Более 15 лет наша компания успешно сотрудничает с крупнейшими производителями комплектующих для данного производства, такими как: производители пластиковых форм —  Zaklad Slusarski и TABOSS, производители пигментов для окрашивания бетона и производства лакокрасочной продукции — PRECHEZA (Чехия) и DEQING TONGCHEM (Китай) и является ведущей компанией по поставкам данной продукции на рынок Российской Федерации.
+				.col-lg
+					+e.img-box
+						img(loading="lazy" src="img/@2x/sAbout-img.jpg" alt="")
+						+e.logo
+							img(loading="lazy" src="img/svg/logo-white.svg" alt="")
+			//remove all br inside, love pp
+			+e.vantage-row.row.justify-content-lg-center.justify-content-md-start.justify-content-center
+				+sAboutItem(1)
+					+e.txt
+						| Высокое качество
+						|
+						br.d-md-none.d-xl-block
+						| и низкие цены
+				+sAboutItem(2)
+					+e.txt Доставка заказа по Московской области
+					+e.gray
+						| при сумме заказа от
+						|
+						br.d-none.d-xl-block
+						| 50000 рублей
+				+sAboutItem(3)
+					+e.txt Предоставление технической информации по продукции и ее применению
+				+sAboutItem(4)
+					+e.txt Наличие полного ассортимента продукции и постоянное расширение
+				+sAboutItem(5)
+					+e.txt Два склада и офиса
+					+e.gray в г. Щербинка (Варшавское шоссе) и в г. Ивантеевка (Ярославское шоссе)
 	// end sAbout
+
+mixin sAboutItem(imgNum)
+	.col-6.col-lg-4.col-xl
+		+e.item.text-center.text-md-start.text-lg-center
+			+e.i-row.row.align-items-center
+				.col-md-auto.col-lg-12
+					+e.i-img
+						img(loading="lazy" src=`img/svg/sAbout-vantage-${imgNum}.svg` alt="")
+				+e.txt-col.col
+					block

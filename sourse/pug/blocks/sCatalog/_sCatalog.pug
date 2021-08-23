@@ -1,0 +1,32 @@
+mixin sCatalog(data)
+	// start sCatalog
+	+b.SECTION.sCatalog.section#sCatalog&attributes(attributes)
+		.container
+			+e.row.row
+				.col-lg-3
+					+sCatalogSidebar()
+				.col-lg-9
+					+breadcrumb(...data.breadCrumbs)
+					+b.section-title
+						h1=data.title
+					+e.content
+						block
+	// end sCatalog
+
+mixin sCatalogSidebar()
+	+b.cat-sb.cat-sb-dd-group-js
+		+e.dd-items
+			+sCatalogSidebarItem('Усиленные формы Taboss')
+			+sCatalogSidebarItem('Пластиковые формы Alpha', 'active')
+			+sCatalogSidebarItem('Пигменты и красители')
+			+sCatalogSidebarItem('Добавки в бетон-пластификаторы')
+			+sCatalogSidebarItem('Дополнительные материалы и оборудование')
+			+sCatalogSidebarItem('Малые архитектурные формы')
+			+sCatalogSidebarItem('Заборные формы ')
+
+mixin sCatalogSidebarItem(txt, activeClasses='')
+	+e.dd-item(class=activeClasses)
+		+e.link--dd-head.dd-head-js=txt
+		+e.dd-content.dd-content-js(class=activeClasses)
+			+e.link(href="#") Формы РФ
+			+e.link(href="#") Полиуретановые формы

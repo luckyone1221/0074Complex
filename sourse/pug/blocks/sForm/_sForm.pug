@@ -1,9 +1,33 @@
 mixin sForm()
 	// start sForm
 	+b.SECTION.sForm.section#sForm&attributes(attributes)
+		+e.bg
+			img(loading="lazy" src="img/@2x/sForm.png" alt="")
 		.container
 			+b.section-title.text-center
-				h2 sForm
-				
-			.row
+				h2 Остались вопросы?
+				p Отправьте заявку на консультацию с нашим специалистом и получите ответы на все вопросы прямо сейчас!
+			//- mb remove .col-12.d-lg-none, love pp
+			+form-wrap()
+				+e.row.row.justify-content-center
+					.col-xl-3
+						+input('Ваше имя', 'text')
+					.col-xl-3
+						+input('+7 (___) ___ - __ - __', 'tel')
+					.col-xl-3
+						+input('Ваш email', 'email')
+					.col-12.d-lg-none
+					.col-xl-3
+						+iconBtn('Получить консультацию')(type="submit" class="btn btn-success w-100")
+					.col-12.d-lg-none
+					.col-xl-auto
+						+e.polite
+							+in-c('checkbox')(checked)
+								span.square
+								+e.txt Отправляя заявку, вы соглашаетесь с политикой конфиденциальности и пользовательским соглашением
 	// end sForm
+mixin iconBtn(txt='Получить консультацию')
+	+b.icon-btn&attributes(attributes)
+		+e.icon
+			img(loading="lazy" src="img/svg/wa-black.svg" alt="")
+		span=txt

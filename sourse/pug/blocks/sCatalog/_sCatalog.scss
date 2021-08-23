@@ -1,0 +1,104 @@
+// start .sCatalog
+.sCatalog {
+	--sPT: #{rem(20)};
+	--sPB: #{rem(78)};
+	--sTPB: #{rem(20)};
+	@include media-breakpoint-up(md){
+		--sPT: #{rem(20)};
+		--sPB: #{rem(90)};
+		--sTPB: #{rem(32)};
+	}
+	@include media-breakpoint-up(lg){
+		--sPT: #{rem(30)};
+		--sPB: #{rem(90)};
+		--sTPB: #{rem(30)};
+	}
+	@include media-breakpoint-up(xl){
+		--sPT: #{rem(40)};
+		--sPB: #{rem(98)};
+		--sTPB: #{rem(40)};
+	}
+
+	&__row{
+		@include media-breakpoint-up(lg){
+			--bs-gutter-x: #{rem(16)};
+		}
+		@include media-breakpoint-up(xl){
+			--bs-gutter-x: #{rem(30)};
+		}
+	}
+	.section-title{
+		h1{
+			font-size: rem(36);
+			line-height: calc(43/36);
+			@include media-breakpoint-up(xl){
+				font-size: rem(42);
+				line-height: calc(50/42);
+			}
+		}
+	}
+	&__{}
+	&__{}
+	&__{}
+	&__{}
+} // end.sCatalog
+
+.cat-sb{
+	&__dd-items{
+
+	}
+	&__dd-item{
+		margin-top: -1px;
+		&:first-child{
+			margin: 0;
+		}
+
+		&.active{
+			--aft-rot: 180deg;
+		}
+	}
+	&__link{
+		cursor: pointer;
+		@include mt();
+		display: block;
+		border: 1px solid $gray-120;
+
+		background: $white;
+		color: $body-color!important;
+		&:hover{
+			background: $gray-120;
+		}
+
+		padding: rem(19);
+
+		&--dd-head{
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+
+			&:after{
+				@include mt();
+				transform: rotateX(var(--aft-rot, 0deg));
+				content: '';
+				flex-shrink: 0;
+				width: rem(12);
+				height: rem(12);
+				margin-left: rem(20);
+
+				background-image: url(../img/svg/chevron-down.svg);
+				background-repeat: no-repeat;
+				background-position: center;
+				background-size: contain;
+			}
+		}
+	}
+	&__dd-content{
+		& > *{
+			margin-top: -1px;
+			//&:first-child{
+			//	margin: 0;
+			//}
+		}
+	}
+	&__{}
+}

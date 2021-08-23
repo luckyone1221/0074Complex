@@ -37,9 +37,11 @@ $utilities: ("opacity": (
 $white: #fff !default;
 $gray-100: #EAEAEA;
 $gray-110: #F6F6F6;
+$gray-120: #E5E8EC;
 $gray-200: #e9ecef !default;
 $gray-300: #dee2e6 !default;
 $gray-400: #ced4da !default;
+$gray-410: #C4C4C4;
 $gray-500: #adb5bd !default;
 $gray-600: #7E7E7E;
 $gray-700: #495057 !default;
@@ -72,6 +74,7 @@ $red: #dc3545 !default;
 $orange: #fd7e14 !default;
 $yellow: #ffc107 !default;
 $green: #B5C830;
+$green2: #C3D737;
 $teal: #20c997 !default;
 $cyan: #0dcaf0 !default;
 // scss-docs-end color-variables
@@ -306,7 +309,7 @@ $border-color: $gray-300 !default;
 // scss-docs-end border-variables
 
 // scss-docs-start border-radius-variables
-$border-radius: .25rem !default;
+$border-radius: 0;
 $border-radius-sm: .2rem !default;
 $border-radius-lg: .3rem !default;
 $border-radius-pill: 50rem !default;
@@ -414,7 +417,7 @@ $font-sizes: (1: $h1-font-size,
 $headings-margin-bottom: $spacer * .5 !default;
 $headings-font-family: null !default;
 $headings-font-style: null !default;
-$headings-font-weight: 500 !default;
+$headings-font-weight: 600 !default;
 $headings-line-height: 1.2 !default;
 $headings-color: null !default;
 // scss-docs-end headings-variables
@@ -629,8 +632,8 @@ $form-label-color: null !default;
 // scss-docs-end form-label-variables
 
 // scss-docs-start form-input-variables
-$input-padding-y: $input-btn-padding-y !default;
-$input-padding-x: $input-btn-padding-x !default;
+$input-padding-y: rem(17);
+$input-padding-x: rem(29);
 $input-font-family: $input-btn-font-family !default;
 $input-font-size: $input-btn-font-size !default;
 $input-font-weight: $font-weight-base !default;

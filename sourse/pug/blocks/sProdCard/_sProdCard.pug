@@ -1,0 +1,90 @@
+mixin sProdCard(data)
+	// start sProdCard
+	+b.sProdCard.section#sProdCard&attributes(attributes)
+		+e.row.row
+			.col-lg-6
+				+e.img-box
+					img(loading="lazy" src="img/@2x/sProdCard-img.png" alt="")
+			.col-lg-6
+				+e.chars-wrap
+					+e.chars
+						+sProdCardCharsItem('Размеры:', '20х10')
+						+sProdCardCharsItem('Толщина:', '5 см')
+						+sProdCardCharsItem('Комплект:', '50 шт./м2')
+					+e.price-row.row
+						.col-6.col-md-12
+							+e.price-txt Цена в розницу:
+								+e.price 35 ₽
+								+e.price-wholesale
+									span
+										| Цена оптом:
+										|
+									a(href="#") по запросу
+						.col-6.col-md-12
+							+e.btns-row.row
+								.col-6
+									+e.btn--green(href="#") Оставить заявку
+								.col-6
+									+e.btn--out-green(href="#") Оставить заявку
+										+icon('cart')
+										span В корзину
+		//-<a href="mailto:"></a>
+		//-<a href="tel:"></a>
+		+e.gray-row.row
+			+sProdCardGrayItem({
+				title: 'ООО «‎КомплексПро»‎',
+				list: {
+					'Адрес:': 'г. Москва, г. Щербинка, ул Южная 12 ',
+					'Почта:': '<a href="mailto:info@complexpro.ru">info@complexpro.ru</a>, <a href="mailto:vladimir@complexpro.ru">vladimir@complexpro.ru</a>',
+					'Факс:': '<a href="tel:+74997079915">+7 (499) 707-99-15</a>',
+					'Телефон:': '<a href="tel:+79250847314">+7(925) 084-73-14</a>, <a href="tel:+79250847315">+7 (925) 084-73-15</a>',
+				},
+			})
+			+sProdCardGrayItem({
+				title: 'ООО «‎Лидерспектр»‎',
+				list: {
+					'Адрес:': 'МО, г. Ивантеевка, ул. Трудовая, 3 ',
+					'Почта:': '<a href="mailto:complexpro5@mail.ru">complexpro5@mail.ru</a>',
+					'Факс:': '<a href="tel:+74997079915">+7 (499) 707-99-15</a>',
+					'Телефон:': '<a href="tel:+79263650327">+7(926) 365-03-27</a>',
+				},
+			})
+		//-form
+		+whiteForm({
+			title: 'Есть вопросы по этому товару?',
+			descr: 'Вы можете задать нам вопросы с помощью следующей формы',
+		})
+
+	// end sProdCard
+
+mixin whiteForm(data)
+	+b.white-form
+		+form-wrap
+			+e.title
+				h2=data.title
+				p=data.descr
+			+e.inputs
+				+input('Ваше имя', 'text')
+				+input('+7 (___) ___ - __ - __', 'tel')
+				+input('Ваш email', 'email')
+			+e.btn(type="submit") Отправить
+			+e.polite
+				+in-c('checkbox')(checked)
+					span.square
+					+e.txt Отправляя заявку, вы соглашаетесь с политикой конфиденциальности и пользовательским соглашением
+
+mixin sProdCardGrayItem(data)
+	.col-xl-6
+		+e.gray-box
+			h4=data.title
+			ul
+				-for(let [key, val] of data.list)
+					li
+						b=key
+						span!=val
+
+mixin sProdCardCharsItem(key, val)
+	+e.char
+		+e.ch-row.row
+			+e.key-col.col-6=key
+			+e.val-col.col-6=val

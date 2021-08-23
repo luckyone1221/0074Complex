@@ -1,43 +1,330 @@
 .footer {
-		
 	margin-top: auto;
 
-// 
-@include media-breakpoint-up(xl) {}
+	font-size: rem(18);
+	line-height: calc(21/18);
+	@include media-breakpoint-up(md){
+		font-size: rem(14);
+		line-height: calc(16/14);
+	}
+	@include media-breakpoint-up(xl){
+		font-size: rem(16);
+		line-height: calc(19/16);
+	}
 
-@include media-breakpoint-up(lg) {}
+	//
+	background-color: $body-color;
+	color: $white;
 
-@include media-breakpoint-up(md) {}
+	&__main-row{
+		@include media-breakpoint-up(xl){
+			--bs-gutter-x: #{rem(90)};
+		}
+	}
+	&__main-col{
 
-@include media-breakpoint-up(sm) {}
+	}
 
-@include media-breakpoint-up(xs) {}
+	--foot-pt: #{rem(60)};
+	@include media-breakpoint-up(md){
+		--foot-pt: #{rem(40)};
+	}
+	@include media-breakpoint-up(lg){
+		--foot-pt: #{rem(60)};
+	}
+	&__top{
+		padding: var(--foot-pt) 0 rem(30) 0;
+		@include media-breakpoint-up(md){
+			padding: var(--foot-pt) 0 rem(44) 0;
+		}
+		@include media-breakpoint-up(xl){
+			padding: var(--foot-pt) 0 rem(57) 0;
+		}
+
+		border-bottom: 1px solid $gray-910;
+	}
+	&__top-row{
+		--bs-gutter-x: #{rem(10)};
+		padding-bottom: rem(33);
+		@include media-breakpoint-up(md){
+			--bs-gutter-x: inherit;
+			padding-bottom: 0;
+		}
+		@include media-breakpoint-up(xl){
+			--bs-gutter-x: #{rem(93)};
+			padding-bottom: rem(59);
+		}
+	}
+	&__sb-col{
+		@include media-breakpoint-between(md, lg){
+			width: calc(#{rem(248)} + var(--bs-gutter-x));
+		}
+	}
+
+	&__logo{
+		display: block;
+
+		width: rem(226);
+		margin-bottom: rem(30);
+		@include media-breakpoint-up(md){
+			width: rem(230);
+			margin-bottom: rem(40);
+		}
+		@include media-breakpoint-up(lg){
+			width: rem(232);
+		}
+		@include media-breakpoint-up(xl){
+			width: rem(302);
+			margin-bottom: 0;
+		}
+
+		img{
+			width: 100%;
+			height: auto;
+		}
+	}
+
+	.menu{
+		list-style: none;
+		@include media-breakpoint-down(md){
+			margin-bottom: 15px;
+		}
+		@include media-breakpoint-up(md){
+			margin-left: rem(40);
+		}
+		@include media-breakpoint-up(lg){
+			//in here it inherits from col(above node)!!!
+			margin-left: calc(var(--bs-gutter-x) / -2);
+		}
+		@include media-breakpoint-up(xl){
+			--bs-gutter-x: #{rem(10)};
+			--bs-gutter-y: #{rem(25)};
+			margin: 0 calc(var(--bs-gutter-x) * -1);
+
+			display: flex;
+			flex-wrap: wrap;
 
 
-// 
-@include media-breakpoint-between(md, xl) {}
+			margin-top: calc(var(--bs-gutter-y) * -1) !important;
+			& > *{
+				margin-top: var(--bs-gutter-y);
+			}
+		}
 
+		.menu-item{
+			margin-bottom: rem(15);
+			@include media-breakpoint-down(md){
+				&:last-child{
+					margin-bottom: 0;
+				}
+			}
+			@include media-breakpoint-up(md){
+				margin-bottom: rem(10);
+			}
+			@include media-breakpoint-up(xl){
+				margin-bottom: 0;
+				padding: 0 calc(var(--bs-gutter-x) / 2);
 
-// 
-@include media-breakpoint-only(xs) {}
+				&:nth-child(3n + 1){
+					width: 42%;
+				}
+				&:nth-child(3n + 2){
+					width: 33%;
+				}
+				&:nth-child(3n + 3){
+					width: 25%;
+					text-align: right;
+				}
+			}
 
-@include media-breakpoint-only(sm) {}
+			//
+			a{
+				color: $white;
+				&:hover{
+					color: $primary;
+				}
+			}
+		}
+	}
+	&__mid-row{
+		--bs-gutter-y: #{rem(20)};
+		@include media-breakpoint-up(md){
+			--bs-gutter-y: #{rem(10)};
+		}
+		@include media-breakpoint-up(xl){
+			--bs-gutter-x: #{rem(20)};
+		}
+	}
+	&__all-rights{
 
-@include media-breakpoint-only(md) {}
+	}
+	&__policy{
+		@include media-breakpoint-up(xl){
+			margin-left: rem(48);
+		}
+		display: inline-block;
 
-@include media-breakpoint-only(lg) {}
+		color: $gray-600;
+		&:hover{
+			color: $white;
+		}
+	}
+	&__made-by{
+		color: $gray-600!important;
 
-@include media-breakpoint-only(xl) {}
+		&:hover{
+			--mb-color: #{$primary};
+		}
+	}
+	&__mb-green{
+		font-weight: 500;
+		@include mt();
+		display: inline-block;
+		color: var(--mb-color, #{$white});
+	}
 
+	//
+	&__bot{
+		padding: rem(30) 0 rem(80);
+		@include media-breakpoint-up(md){
+			padding: rem(40) 0;
+		}
+		@include media-breakpoint-up(xl){
+			padding: rem(30) 0;
+		}
+	}
+	&__bot-row{
+		--bs-gutter-x: #{rem(30)};
+	}
+	&__partner{
+		display: block;
+		max-width: 100%;
 
-// 
-@include media-breakpoint-down(xl) {}
+		img{
+			width: auto;
+			max-width: 100%;
+		}
+	}
+	&__p-gray{
+		color: $gray-600;
 
-@include media-breakpoint-down(lg) {}
+		line-height: 1.75;
+		font-size: rem(14);
+		@include media-breakpoint-up(xl){
+			font-size: rem(16);
+		}
+	}
+	&__p-val{
+		display: inline-block;
+		color: $white!important;
 
-@include media-breakpoint-down(md) {}
+		line-height: 1.75;
+		font-size: rem(14);
+		@include media-breakpoint-up(xl){
+			font-size: rem(16);
+		}
+	}
+	//
+	&__sb-col{
+		@include media-breakpoint-up(xl){
+			width: calc(#{rem(300)} + var(--bs-gutter-x));
+		}
+	}
+}
+.foot-sb{
+	background: $gray-910;
+	padding: 0 rem(20) rem(20) rem(20);
 
-@include media-breakpoint-down(sm) {}
+	margin-top: calc(-1 * var(--foot-pt));
+	min-height: calc(100% + var(--foot-pt));
+	@include media-breakpoint-up(xl){
+		margin-top: 0;
+		min-height: 100%;
+	}
 
-@include media-breakpoint-down(xs) {}
+	&__btn{
+		@extend .btn;
+		@extend .btn-success;
+		padding: rem(10);
+		margin-left: auto;
+		margin-right: auto;
+
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		.icon{
+			font-size: rem(24);
+			@include media-breakpoint-up(md){
+				font-size: rem(19.2);
+			}
+			@include media-breakpoint-up(xl){
+				font-size: rem(24);
+			}
+
+			color: $body-color;
+		}
+
+		transform: translateY(-50%);
+		width: rem(75);
+		height: rem(75);
+		margin-bottom: rem(5);
+		@include media-breakpoint-up(md){
+			width: rem(60);
+			height: rem(60);
+			margin-bottom: -9px;
+		}
+		@include media-breakpoint-up(xl){
+			width: rem(75);
+			height: rem(75);
+			margin-bottom: rem(17px);
+		}
+
+	}
+	&__c-items{
+		padding-left: rem(24);
+		@include media-breakpoint-up(md){
+			padding-left: rem(33px);
+		}
+		@include media-breakpoint-up(lg){
+			//margin-top: -9px;
+			padding-left: rem(53);
+		}
+		@include media-breakpoint-up(xl){
+			//margin-top: 0;
+			padding-left: rem(47);
+		}
+	}
+	.cont-item{
+		margin-bottom: rem(15);
+		@include media-breakpoint-up(md){
+			margin-bottom: rem(14);
+		}
+		@include media-breakpoint-up(lg){
+			margin-bottom: rem(20);
+		}
+		@include media-breakpoint-up(xl){
+			margin-bottom: rem(37);
+		}
+
+		&__icon{}
+		&__gray{}
+		&__number{
+			color: $white!important;
+		}
+	}
+	&__order-call{
+		display: inline-block;
+		font-weight: 600;
+		text-align: center;
+		color: $white!important;
+
+		border-top: 3px solid transparent;
+
+		border-bottom: 3px solid $primary;
+		&:hover{
+			border-bottom: 3px solid transparent;
+		}
+	}
+	&__{}
 }

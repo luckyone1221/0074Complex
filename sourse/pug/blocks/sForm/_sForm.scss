@@ -1,29 +1,159 @@
+// start .sForm
+.sForm {
+	--sPT: #{rem(38)};
+	--sPB: #{rem(40)};
+	--sTPB: #{rem(40)};
+	@include media-breakpoint-up(md){
+		--sPT: #{rem(40)};
+	}
+	@include media-breakpoint-up(lg){
+		--sTPB: #{rem(30)};
+	}
+	@include media-breakpoint-up(xl){
+		--sPT: #{rem(106)};
+		--sPB: #{rem(106)};
+		--sTPB: #{rem(40)};
+	}
 
-	// start .sForm
-	.sForm {
-		 
-	@include media-breakpoint-up(xl) {}
-	@include media-breakpoint-up(lg) {}
-	@include media-breakpoint-up(md) {}
-	@include media-breakpoint-up(sm) {}
-	@include media-breakpoint-up(xs) {}
-	
-	//
-	@include media-breakpoint-between(md, xl) { }
-	
-	
-	//
-	@include media-breakpoint-only(xs) {}
-	@include media-breakpoint-only(sm) {}
-	@include media-breakpoint-only(md) {}
-	@include media-breakpoint-only(lg) {}
-	@include media-breakpoint-only(xl) {}
-	
-	//
-	@include media-breakpoint-down(xl) {}
-	@include media-breakpoint-down(lg) {}
-	@include media-breakpoint-down(md) {}
-	@include media-breakpoint-down(sm) {}
-	@include media-breakpoint-down(xs) {} 
+	color: $white;
 
+	position: relative;
+	z-index: 1;
+	&__bg{
+		background-color: $body-color;
+		position: absolute;
+		z-index: -1;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+
+		img{
+			opacity: .3;
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+	}
+	//
+	.section-title{
+		margin: 0 auto;
+		@include media-breakpoint-up(md){
+			max-width: rem(515);
+		}
+		@include media-breakpoint-up(lg){
+			max-width: 100%;
+		}
+
+		h2{
+			//font-family: $mono;
+			color: $white;
+
+			margin-bottom: rem(20);
+		}
+		p{
+			font-size: rem(24);
+			line-height: 1.5;
+			@include media-breakpoint-up(md){
+				font-size: rem(18);
+			}
+			@include media-breakpoint-up(lg){
+				font-size: rem(18);
+				line-height: 1.75;
+			}
+			@include media-breakpoint-up(xl){
+				font-size: rem(20);
+				line-height: calc(23/20);
+			}
+			color: $gray-410;
+		}
+	}
+	//
+	.form-wrap{
+		max-width: rem(472);
+		@include media-breakpoint-up(lg){
+			max-width: rem(624);
+		}
+		@include media-breakpoint-up(xl){
+			max-width: 100%;
+		}
+		margin: 0 auto;
+
+		&__row{
+			--bs-gutter-y: #{rem(10)};
+			@include media-breakpoint-up(lg){
+				--bs-gutter-y: #{rem(20)};
+			}
+
+			--bs-gutter-x: #{rem(20)};
+		}
+		&__input-wrap{
+
+		}
+		&__input{
+			text-align: center;
+			@include media-breakpoint-up(xl){
+				text-align: left;
+			}
+		}
+		//
+		&__polite{
+			@include media-breakpoint-down(md){
+				font-size: rem(16);
+				line-height: 1.5;
+			}
+		}
+	}
+	//
+	&__{}
+	&__{}
 } // end.sForm
+//
+
+.custom-input{
+	display: flex!important;
+	padding: 0!important;
+
+	input{
+		@extend .invisible;
+	}
+
+	//
+	input:checked + .square{
+		&:after{
+			opacity: 1;
+		}
+	}
+
+	//
+	.square{
+		display: flex;
+		flex-shrink: 0;
+		width: rem(24);
+		height: rem(24);
+		padding: rem(6);
+
+		border: 1px solid $gray-100;
+		background: $white;
+
+
+		&:after{
+			content: '';
+			@include mt();
+			opacity: 0;
+			display: block;
+			width: 100%;
+			height: 100%;
+
+			background-image: url(../img/svg/check.svg);
+			background-repeat: no-repeat;
+			background-position: center;
+			background-size: contain;
+		}
+	}
+	&__txt{
+		margin-left: rem(11);
+		line-height: 1.5;
+		color: $gray-410;
+	}
+}

@@ -198,7 +198,7 @@ const JSCCommon = {
 		}, { passive: true });
 	},
 	animateScroll() {
-		$(document).on('click', " .menu li a, .scroll-link", function () {
+		$(document).on('click', ".scroll-link", function () {
 			const elementClick = $(this).attr("href");
 			if (!document.querySelector(elementClick)) {
 				$(this).attr("href", '/' + elementClick)
@@ -218,7 +218,7 @@ function eventHandler() {
 	JSCCommon.modalCall();
 	// JSCCommon.tabscostume('tabs');
 	JSCCommon.mobileMenu();
-	// JSCCommon.inputMask();
+	JSCCommon.inputMask();
 	// JSCCommon.sendForm();
 	JSCCommon.heightwindow();
 	// JSCCommon.toggleShow(".catalog-block__toggle--desctop", '.catalog-block__dropdown');
@@ -297,6 +297,91 @@ function eventHandler() {
 			$(this).toggleClass('active');
 		});
 	});
+	//map
+	//fix here put into pug afterwards
+	window.setTimeout(function (){
+		let yandexScript = document.createElement('script');
+		yandexScript.setAttribute('src', 'https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=ef0b1dde-1d01-4d5b-9636-c00e2adbee98');
+		yandexScript.setAttribute('type', 'text/javascript');
+
+		document.body.appendChild(yandexScript);
+		//console.log(yandexScript);
+		window.setTimeout(function (){
+			ymaps.ready(function () {
+				var myMap = new ymaps.Map('map', {
+						center: [55.751574, 37.573856],
+						zoom: 9
+					}, {
+						searchControlProvider: 'yandex#search'
+					}),
+
+					// // Создаём макет содержимого.
+					// MyIconContentLayout = ymaps.templateLayoutFactory.createClass(
+					// 	'<div style="color: #FFFFFF; font-weight: bold;">$[properties.iconContent]</div>'
+					// ),
+
+					myPlacemark = new ymaps.Placemark([55.751574, 37.573856], {
+						hintContent: 'ООО Лаборатория Гемотест',
+						balloonContent: 'г. Москва'
+					}, {
+						// Опции.
+						// Необходимо указать данный тип макета.
+						iconLayout: 'default#image',
+						// Своё изображение иконки метки.
+						iconImageHref: 'img/svg/green-mark.svg',
+						// Размеры метки.
+						iconImageSize: [28, 40],
+						// Смещение левого верхнего угла иконки относительно
+						// её "ножки" (точки привязки).
+						//iconImageOffset: [-5, -38]
+						iconImageOffset: [0, 0]
+					});
+
+				myMap.geoObjects
+					.add(myPlacemark);
+			});
+		}, 1000);
+
+	}, 2000);
+
+	//footer
+	$('.set-curr-year-js').each(function (){
+		this.innerHTML = new Date().getFullYear();
+	});
+	function makeDDGroup(ArrSelectors){
+		for (let parentSelect of ArrSelectors){
+			let parent = document.querySelector(parentSelect);
+			if (parent){
+				// childHeads, kind of funny))
+				let ChildHeads = parent.querySelectorAll('.dd-head-js:not(.disabled)');
+				$(ChildHeads).click(function (){
+					let clickedHead = this;
+
+					$(ChildHeads).each(function (){
+						if (this === clickedHead){
+							//parent element gain toggle class, style head change via parent
+							$(this.parentElement).toggleClass('active');
+							$(this.parentElement).find('.dd-content-js').slideToggle(function (){
+								$(this).toggleClass('active');
+							});
+						}
+						else{
+							$(this.parentElement).removeClass('active');
+							$(this.parentElement).find('.dd-content-js').slideUp(function (){
+								$(this).removeClass('active');
+							});
+						}
+					});
+
+				});
+			}
+		}
+	}
+	makeDDGroup([
+		'.cat-sb-dd-group-js',
+	]);
+	//
+
 
 	//end luckyoneJs
 

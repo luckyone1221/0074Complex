@@ -10,7 +10,7 @@
 	--sTPB: #{rem(0)};
 
 	--sPB: #{rem(40)};
-	@include media-breakpoint-up(xl){
+	@include media-breakpoint-up(lg){
 		--sPB: #{rem(60)};
 	}
 	//
@@ -161,17 +161,9 @@
 			background-color: $primary;
 		}
 	}
-	//
-	--img-h: #{rem(352)};
-	@include media-breakpoint-up(md){
-		--img-h: #{rem(320)};
-	}
-	@include media-breakpoint-up(lg){
-		--img-h: #{rem(302)};
-	}
-	@include media-breakpoint-up(xl){
-		--img-h: #{rem(410)};
-	}
+
+
+	//--img-h moved to root
 	&__img-box{
 		height: var(--img-h);
 		display: block;

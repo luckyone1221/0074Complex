@@ -11,3 +11,16 @@ mixin mnu()
 			li.menu-item(itemprop="item" ): a(href= linkPatch itemprop="url")= linkName
 
 //- menu
+
+mixin mnu2()
+	-
+		var nav= {
+			"Каталог продукции":"#",
+			"Оплата и доставка":"#",
+			"Контакты":"#",
+			"Прайс-лист":"#",
+			"Новости":"#",
+		}
+	ul.menu(itemscope itemtype="http://schema.org/SiteNavigationElement")
+		each linkPatch, linkName in nav
+			li.menu-item(itemprop="item" ): a(href= linkPatch itemprop="url")= linkName

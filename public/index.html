@@ -98,29 +98,29 @@
 											<div class="col-auto">
 												<div class="top-nav__contact-row row">
 													<div class="col-auto">
-														<div class="top-nav__c-sub-row row align-items-center">
+														<div class="cont-item row align-items-center">
 															<div class="col-auto">
-																<a class="top-nav__c-icon" href="tel:+74956488373"><img loading="lazy" src="img/svg/tn-soc-wa.svg" alt=""/>
+																<a class="cont-item__icon" href="tel:+74956488373"><img loading="lazy" src="img/svg/tn-soc-wa.svg" alt=""/>
 																</a>
 															</div>
 															<div class="col">
-																<div class="top-nav__c-gray">г. Щербинка
+																<div class="cont-item__gray">г. Щербинка
 																</div>
-																<a class="top-nav__c-number" href="tel:+74956488373">+7 (495) 648-8373
+																<a class="cont-item__number" href="tel:+74956488373">+7 (495) 648-8373
 																</a>
 															</div>
 														</div>
 													</div>
 													<div class="col-auto">
-														<div class="top-nav__c-sub-row row align-items-center">
+														<div class="cont-item row align-items-center">
 															<div class="col-auto">
-																<a class="top-nav__c-icon" href="tel:+74997079916"><img loading="lazy" src="img/svg/tn-soc-wa.svg" alt=""/>
+																<a class="cont-item__icon" href="tel:+74997079916"><img loading="lazy" src="img/svg/tn-soc-wa.svg" alt=""/>
 																</a>
 															</div>
 															<div class="col">
-																<div class="top-nav__c-gray">г. Ивантеева
+																<div class="cont-item__gray">г. Ивантеева
 																</div>
-																<a class="top-nav__c-number" href="tel:+74997079916">+7 (499) 707-9916
+																<a class="cont-item__number" href="tel:+74997079916">+7 (499) 707-9916
 																</a>
 															</div>
 														</div>
@@ -509,40 +509,371 @@
 			<!-- start sAbout-->
 			<section class="sAbout section" id="sAbout">
 				<div class="container">
-					<div class="section-title text-center">
-						<h2>sAbout</h2>
+					<div class="sAbout__top-row row gx-0">
+						<div class="sAbout__left-col col-lg-6">
+							<div class="section-title">
+								<h2>О компании</h2>
+								<p>Более 15 лет наша компания успешно сотрудничает с крупнейшими производителями комплектующих для данного производства, такими как: производители пластиковых форм —  Zaklad Slusarski и TABOSS, производители пигментов для окрашивания бетона и производства лакокрасочной продукции — PRECHEZA (Чехия) и DEQING TONGCHEM (Китай) и является ведущей компанией по поставкам данной продукции на рынок Российской Федерации.</p>
+							</div>
+						</div>
+						<div class="col-lg">
+							<div class="sAbout__img-box"><img loading="lazy" src="img/@2x/sAbout-img.jpg" alt=""/>
+								<div class="sAbout__logo"><img loading="lazy" src="img/svg/logo-white.svg" alt=""/>
+								</div>
+							</div>
+						</div>
 					</div>
-					<div class="row"></div>
+					<!--remove all br inside, love pp-->
+					<div class="sAbout__vantage-row row justify-content-lg-center justify-content-md-start justify-content-center">
+						<div class="col-6 col-lg-4 col-xl">
+							<div class="sAbout__item text-center text-md-start text-lg-center">
+								<div class="sAbout__i-row row align-items-center">
+									<div class="col-md-auto col-lg-12">
+										<div class="sAbout__i-img"><img loading="lazy" src="img/svg/sAbout-vantage-1.svg" alt=""/>
+										</div>
+									</div>
+									<div class="sAbout__txt-col col">
+										<div class="sAbout__txt">
+											Высокое качество
+											<br class="d-md-none d-xl-block"/>и низкие цены
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-6 col-lg-4 col-xl">
+							<div class="sAbout__item text-center text-md-start text-lg-center">
+								<div class="sAbout__i-row row align-items-center">
+									<div class="col-md-auto col-lg-12">
+										<div class="sAbout__i-img"><img loading="lazy" src="img/svg/sAbout-vantage-2.svg" alt=""/>
+										</div>
+									</div>
+									<div class="sAbout__txt-col col">
+										<div class="sAbout__txt">Доставка заказа по Московской области
+										</div>
+										<div class="sAbout__gray">
+											при сумме заказа от
+											<br class="d-none d-xl-block"/>50000 рублей
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-6 col-lg-4 col-xl">
+							<div class="sAbout__item text-center text-md-start text-lg-center">
+								<div class="sAbout__i-row row align-items-center">
+									<div class="col-md-auto col-lg-12">
+										<div class="sAbout__i-img"><img loading="lazy" src="img/svg/sAbout-vantage-3.svg" alt=""/>
+										</div>
+									</div>
+									<div class="sAbout__txt-col col">
+										<div class="sAbout__txt">Предоставление технической информации по продукции и ее применению
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-6 col-lg-4 col-xl">
+							<div class="sAbout__item text-center text-md-start text-lg-center">
+								<div class="sAbout__i-row row align-items-center">
+									<div class="col-md-auto col-lg-12">
+										<div class="sAbout__i-img"><img loading="lazy" src="img/svg/sAbout-vantage-4.svg" alt=""/>
+										</div>
+									</div>
+									<div class="sAbout__txt-col col">
+										<div class="sAbout__txt">Наличие полного ассортимента продукции и постоянное расширение
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-6 col-lg-4 col-xl">
+							<div class="sAbout__item text-center text-md-start text-lg-center">
+								<div class="sAbout__i-row row align-items-center">
+									<div class="col-md-auto col-lg-12">
+										<div class="sAbout__i-img"><img loading="lazy" src="img/svg/sAbout-vantage-5.svg" alt=""/>
+										</div>
+									</div>
+									<div class="sAbout__txt-col col">
+										<div class="sAbout__txt">Два склада и офиса
+										</div>
+										<div class="sAbout__gray">в г. Щербинка (Варшавское шоссе) и в г. Ивантеевка (Ярославское шоссе)
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
 				</div>
 			</section>
 			<!-- end sAbout-->
 			<!-- start sForm-->
 			<section class="sForm section" id="sForm">
+				<div class="sForm__bg"><img loading="lazy" src="img/@2x/sForm.png" alt=""/>
+				</div>
 				<div class="container">
 					<div class="section-title text-center">
-						<h2>sForm</h2>
+						<h2>Остались вопросы?</h2>
+						<p>Отправьте заявку на консультацию с нашим специалистом и получите ответы на все вопросы прямо сейчас!</p>
 					</div>
-					<div class="row"></div>
+					<div class="form-wrap">
+						<form>
+							<div class="form-wrap__row row justify-content-center">
+								<div class="col-xl-3">
+									<div class="form-wrap__input-wrap form-group"><input class="form-wrap__input form-control" name="text" type="text" placeholder="Ваше имя"/>
+									</div>
+									<!-- +e.input-wrap-->
+								</div>
+								<div class="col-xl-3">
+									<div class="form-wrap__input-wrap form-group"><input class="form-wrap__input form-control" name="tel" type="tel" placeholder="+7 (___) ___ - __ - __"/>
+									</div>
+									<!-- +e.input-wrap-->
+								</div>
+								<div class="col-xl-3">
+									<div class="form-wrap__input-wrap form-group"><input class="form-wrap__input form-control" name="email" type="email" placeholder="Ваш email"/>
+									</div>
+									<!-- +e.input-wrap-->
+								</div>
+								<div class="col-12 d-lg-none"></div>
+								<div class="col-xl-3">
+									<button class="icon-btn btn btn-success w-100" type="submit">
+										<div class="icon-btn__icon"><img loading="lazy" src="img/svg/wa-black.svg" alt=""/>
+										</div><span>Получить консультацию</span>
+									</button>
+								</div>
+								<div class="col-12 d-lg-none"></div>
+								<div class="col-xl-auto">
+									<div class="form-wrap__polite">
+										<label class="custom-input form-check"><input class="custom-input__input form-check-input" name="checkbox" type="checkbox" checked="checked"/><span class="square"></span><span class="custom-input__txt">Отправляя заявку, вы соглашаетесь с политикой конфиденциальности и пользовательским соглашением</span>
+										</label>
+									</div>
+								</div>
+							</div>
+						</form>
+					</div>
 				</div>
 			</section>
 			<!-- end sForm-->
 			<!-- start sMap-->
 			<section class="sMap section" id="sMap">
 				<div class="container">
-					<div class="section-title text-center">
-						<h2>sMap</h2>
+					<div class="section-title text-lg-center">
+						<h2>Связаться с нами</h2>
 					</div>
-					<div class="row"></div>
+					<div class="sMap__main-row row">
+						<div class="sMap__left-col col-lg-6">
+							<div class="sMap__row row">
+								<div class="col-6">
+									<div class="sMap__title">Адрес:
+									</div>
+									<div class="sMap__val">г. Щербинка, ул. Южная, 12
+									</div>
+								</div>
+								<div class="col-6">
+									<div class="sMap__title">Адрес:
+									</div>
+									<div class="sMap__val">г. Ивантеевка, ул. Трудовая, д. 3
+									</div>
+								</div>
+								<div class="col-6">
+									<div class="sMap__title">Телефон:
+									</div>
+									<a class="sMap__val" href="tel:+74956488373">+7 (495) 648-8373
+									</a>
+								</div>
+								<div class="col-6">
+									<div class="sMap__title">Телефон:
+									</div>
+									<a class="sMap__val" href="tel:+74997079916">+7 (499) 707-9916
+									</a>
+								</div>
+								<div class="col-6">
+									<div class="sMap__title">E-mail:
+									</div>
+									<a class="sMap__val" href="mailto:info@complexpro.ru">info@complexpro.ru
+									</a>
+								</div>
+								<div class="col-6">
+									<div class="sMap__title">E-mail:
+									</div>
+									<a class="sMap__val" href="mailto:complexpro5@mail.ru">complexpro5@mail.ru
+									</a>
+								</div>
+								<div class="col-auto col-xl-6">
+									<a class="icon-btn btn btn-success link-modal-js" href="#modal-call">
+										<div class="icon-btn__icon"><img loading="lazy" src="img/svg/wa-black.svg" alt=""/>
+										</div><span>Заказать звонок</span>
+									</a>
+								</div>
+							</div>
+						</div>
+						<div class="col-lg">
+							<div class="sMap__map-box" id="map">
+							</div>
+						</div>
+					</div>
 				</div>
 			</section>
 			<!-- end sMap-->
 			<footer class="footer">
 				<div class="container">
-					<div class="row">
-						<div class="col"></div>
-						<div class="col"></div>
-						<div class="col"></div>
-						<div class="col-auto"></div>
+					<div class="footer__main-row row">
+						<div class="footer__main-col col-xl">
+							<div class="footer__top">
+								<div class="footer__top-row row">
+									<div class="col-6 col-md-4 col-xl-auto">
+										<a class="footer__logo" href="#"><img loading="lazy" src="img/svg/logo.svg" alt=""/>
+										</a>
+										<div class="footer__mid-row row d-none d-md-flex d-xl-none">
+											<div class="col-xl-auto">
+												<div class="footer__all-rights">
+													© Компания ООО «КОМПЛЕКСПРО»,
+													<span class="set-curr-year-js">2021</span>
+												</div>
+											</div>
+											<div class="col-xl-auto">
+												<a class="footer__policy" href="#">Политика конфиденциальности
+												</a>
+											</div>
+											<div class="col-xl">
+												<a class="footer__made-by" href="#"><span>
+														Разработка сайта —
+														</span><span class="footer__mb-green">WORKES</span>
+												</a>
+											</div>
+										</div>
+										<div class="d-md-none">
+											<ul class="menu" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
+												<li class="menu-item" itemprop="item"><a href="#" itemprop="url">Каталог продукции</a></li>
+												<li class="menu-item" itemprop="item"><a href="#" itemprop="url">Оплата и доставка</a></li>
+												<li class="menu-item" itemprop="item"><a href="#" itemprop="url">Контакты</a></li>
+												<li class="menu-item" itemprop="item"><a href="#" itemprop="url">Прайс-лист</a></li>
+												<li class="menu-item" itemprop="item"><a href="#" itemprop="url">Новости</a></li>
+											</ul>
+										</div>
+									</div>
+									<div class="col-md col-lg-3 col-xl d-none d-md-block">
+										<ul class="menu" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
+											<li class="menu-item" itemprop="item"><a href="#" itemprop="url">Каталог продукции</a></li>
+											<li class="menu-item" itemprop="item"><a href="#" itemprop="url">Оплата и доставка</a></li>
+											<li class="menu-item" itemprop="item"><a href="#" itemprop="url">Контакты</a></li>
+											<li class="menu-item" itemprop="item"><a href="#" itemprop="url">Прайс-лист</a></li>
+											<li class="menu-item" itemprop="item"><a href="#" itemprop="url">Новости</a></li>
+										</ul>
+									</div>
+									<div class="footer__sb-col col-6 col-md-auto col-lg ms-auto d-xl-none">
+										<div class="foot-sb">
+											<a class="foot-sb__btn scroll-link" href="#header">
+												<svg class="icon icon-arrow-top ">
+													<use xlink:href="img/svg/sprite.svg#arrow-top"></use>
+												</svg>
+											</a>
+											<div class="foot-sb__c-items">
+												<div class="cont-item row align-items-center">
+													<div class="col-auto">
+														<a class="cont-item__icon" href="tel:+74956488373"><img loading="lazy" src="img/svg/tn-soc-wa.svg" alt=""/>
+														</a>
+													</div>
+													<div class="col">
+														<div class="cont-item__gray">г. Щербинка
+														</div>
+														<a class="cont-item__number" href="tel:+74956488373">+7 (495) 648-8373
+														</a>
+													</div>
+												</div>
+												<div class="cont-item row align-items-center">
+													<div class="col-auto">
+														<a class="cont-item__icon" href="tel:+74997079916"><img loading="lazy" src="img/svg/tn-soc-wa.svg" alt=""/>
+														</a>
+													</div>
+													<div class="col">
+														<div class="cont-item__gray">г. Ивантеева
+														</div>
+														<a class="cont-item__number" href="tel:+74997079916">+7 (499) 707-9916
+														</a>
+													</div>
+												</div>
+											</div>
+											<div class="text-center">
+												<a class="foot-sb__order-call" href="#">Заказать звонок
+												</a>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="footer__mid-row row align-items-center d-md-none d-xl-flex">
+									<div class="col-xl-auto text-center text-xl-start">
+										<div class="footer__all-rights">
+											© Компания ООО «КОМПЛЕКСПРО»,
+											<span class="set-curr-year-js">2021</span>
+										</div>
+									</div>
+									<div class="col-xl-auto text-center text-xl-start">
+										<a class="footer__policy" href="#">Политика конфиденциальности
+										</a>
+									</div>
+									<div class="col-xl text-center text-xl-end">
+										<a class="footer__made-by" href="#"><span>
+												Разработка сайта —
+												</span><span class="footer__mb-green">WORKES</span>
+										</a>
+									</div>
+								</div>
+							</div>
+							<div class="footer__bot">
+								<div class="footer__bot-row row justify-content-md-start justify-content-center gy-4">
+									<div class="col-auto">
+										<a class="footer__partner" href="#"><img loading="lazy" src="img/@2x/foot-part-logo.png" alt=""/>
+										</a>
+									</div>
+									<div class="col-auto col-md">
+										<div class="footer__p-gray">Наш партнер:
+										</div>
+										<a class="footer__p-val" href="#">Производство вибропрессов - Завод Поятос
+										</a>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="footer__sb-col col-xl-3 d-none d-xl-block">
+							<div class="foot-sb">
+								<a class="foot-sb__btn scroll-link" href="#header">
+									<svg class="icon icon-arrow-top ">
+										<use xlink:href="img/svg/sprite.svg#arrow-top"></use>
+									</svg>
+								</a>
+								<div class="foot-sb__c-items">
+									<div class="cont-item row align-items-center">
+										<div class="col-auto">
+											<a class="cont-item__icon" href="tel:+74956488373"><img loading="lazy" src="img/svg/tn-soc-wa.svg" alt=""/>
+											</a>
+										</div>
+										<div class="col">
+											<div class="cont-item__gray">г. Щербинка
+											</div>
+											<a class="cont-item__number" href="tel:+74956488373">+7 (495) 648-8373
+											</a>
+										</div>
+									</div>
+									<div class="cont-item row align-items-center">
+										<div class="col-auto">
+											<a class="cont-item__icon" href="tel:+74997079916"><img loading="lazy" src="img/svg/tn-soc-wa.svg" alt=""/>
+											</a>
+										</div>
+										<div class="col">
+											<div class="cont-item__gray">г. Ивантеева
+											</div>
+											<a class="cont-item__number" href="tel:+74997079916">+7 (499) 707-9916
+											</a>
+										</div>
+									</div>
+								</div>
+								<div class="text-center">
+									<a class="foot-sb__order-call" href="#">Заказать звонок
+									</a>
+								</div>
+							</div>
+						</div>
 					</div>
 				</div>
 			</footer>

@@ -1,4 +1,5 @@
 $default-font: "Gilroy";
+$mono: "SFProDisplay";
 // $file-form: ($file-formats: woff2 woff ttf);
 $addr: '../fonts/';
 $file-format: woff2;
@@ -11,6 +12,10 @@ $file-format: woff2;
 @include font-face ($default-font, $addr + "Gilroy-Bold/Gilroy-Bold", 700, $file-formats: $file-format);
 @include font-face ($default-font, $addr + "Gilroy-ExtraBold/Gilroy-ExtraBold", 800, $file-formats: $file-format);
 @include font-face ($default-font, $addr + "Gilroy-Black/Gilroy-Black", 900, $file-formats: $file-format);
+
+//mono
+@include font-face ($mono, $addr + "SFProDisplay-Regular/SFProDisplay-Regular", 400, $file-formats: $file-format);
+@include font-face ($mono, $addr + "SFProDisplay-Semibold/SFProDisplay-Semibold", 600, $file-formats: $file-format);
 
 // font-weight helper:
 // 100 Thin

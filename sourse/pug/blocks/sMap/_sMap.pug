@@ -2,8 +2,25 @@ mixin sMap(data)
 	// start sMap
 	+b.SECTION.sMap.section#sMap&attributes(attributes)
 		.container
-			+b.section-title.text-center
-				h2 sMap
-				
-			.row
+			+b.section-title.text-lg-center
+				h2 Связаться с нами
+			+e.main-row.row
+				+e.left-col.col-lg-6
+					+e.row.row
+						+sMapItem('Адрес:', 'г. Щербинка, ул. Южная, 12')()
+						+sMapItem('Адрес:', 'г. Ивантеевка, ул. Трудовая, д. 3')()
+						+sMapItem('Телефон:', '+7 (495) 648-8373')(href="tel:+74956488373")
+						+sMapItem('Телефон:', '+7 (499) 707-9916')(href="tel:+74997079916")
+						+sMapItem('E-mail:', 'info@complexpro.ru')(href="mailto:info@complexpro.ru")
+						+sMapItem('E-mail:', 'complexpro5@mail.ru')(href="mailto:complexpro5@mail.ru")
+						.col-auto.col-xl-6
+							+iconBtn('Заказать звонок')(href="#modal-call" class="btn btn-success link-modal-js")
+				.col-lg
+					+e.map-box#map
+
 	// end sMap
+
+mixin sMapItem(title, val)
+	.col-6
+		+e.title=title
+		+e.val&attributes(attributes)=val

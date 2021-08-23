@@ -1,9 +1,65 @@
 mixin footer()
 	+b.FOOTER.footer
 		.container
-			.row
-				.col
-					
-				.col
-				.col
-				.col-auto
+			+e.main-row.row
+				+e.main-col.col-xl
+					+e.top
+						+e.top-row.row
+							.col-6.col-md-4.col-xl-auto
+								+e.logo(href="#")
+									img(loading="lazy" src="img/svg/logo.svg" alt="")
+								//-
+								+e.mid-row.row.d-none.d-md-flex.d-xl-none
+									.col-xl-auto
+										+e.all-rights
+											| © Компания ООО «КОМПЛЕКСПРО»,
+											|
+											span.set-curr-year-js 2021
+									.col-xl-auto
+										+e.policy(href="#") Политика конфиденциальности
+									.col-xl
+										+e.made-by(href="#")
+											span
+												| Разработка сайта —
+												|
+											+e.SPAN.mb-green WORKES
+								.d-md-none
+									+mnu2()
+							.col-md.col-lg-3.col-xl.d-none.d-md-block
+								+mnu2()
+							+e.sb-col.col-6.col-md-auto.col-lg.ms-auto.d-xl-none
+								+footerSidebar()
+						+e.mid-row.row.align-items-center.d-md-none.d-xl-flex
+							.col-xl-auto.text-center.text-xl-start
+								+e.all-rights
+									| © Компания ООО «КОМПЛЕКСПРО»,
+									|
+									span.set-curr-year-js 2021
+							.col-xl-auto.text-center.text-xl-start
+								+e.policy(href="#") Политика конфиденциальности
+							.col-xl.text-center.text-xl-end
+								+e.made-by(href="#")
+									span
+										| Разработка сайта —
+										|
+									+e.SPAN.mb-green WORKES
+					+e.bot
+						+e.bot-row.row.justify-content-md-start.justify-content-center.gy-4
+							.col-auto
+								+e.partner(href="#")
+									img(loading='lazy' src="img/@2x/foot-part-logo.png" alt="")
+							.col-auto.col-md
+								+e.p-gray Наш партнер:
+								+e.p-val(href="#") Производство вибропрессов - Завод Поятос
+				+e.sb-col.col-xl-3.d-none.d-xl-block
+					+footerSidebar()
+
+mixin footerSidebar()
+	+b.foot-sb
+		+e.btn.scroll-link(href="#header")
+			+icon('arrow-top')
+		+e.c-items
+			+contactItem('г. Щербинка', '+7 (495) 648-8373', '+74956488373')
+			+contactItem('г. Ивантеева', '+7 (499) 707-9916', '+74997079916')
+		.text-center
+			+e.order-call(href="#") Заказать звонок

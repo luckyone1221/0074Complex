@@ -43,8 +43,10 @@ mixin top-nav()
 									+mnu()
 								.col-auto
 									+e.contact-row.row
-										+contactItem('г. Щербинка', '+7 (495) 648-8373', '+74956488373')
-										+contactItem('г. Ивантеева', '+7 (499) 707-9916', '+74997079916')
+										.col-auto
+											+contactItem('г. Щербинка', '+7 (495) 648-8373', '+74956488373')
+										.col-auto
+											+contactItem('г. Ивантеева', '+7 (499) 707-9916', '+74997079916')
 								.col-auto.d-none.d-xl-block
 									+e.order-call(href="#") Заказать звонок
 						+e.c-box.p-0.align-items-stretch
@@ -92,11 +94,10 @@ mixin tnSearch()
 			+e.INPUT.input.form-control(type='text' placeholder="Поиск по каталогу")
 
 mixin contactItem(grayTxt, tel, telHref)
-	.col-auto
-		+e.c-sub-row.row.align-items-center
-			.col-auto
-				+e.c-icon(href=`tel:${telHref}`)
-					img(loading="lazy" src="img/svg/tn-soc-wa.svg" alt="")
-			.col
-				+e.c-gray=grayTxt
-				+e.c-number(href=`tel:${telHref}`)=tel
+	+b.cont-item.row.align-items-center
+		.col-auto
+			+e.icon(href=`tel:${telHref}`)
+				img(loading="lazy" src="img/svg/tn-soc-wa.svg" alt="")
+		.col
+			+e.gray=grayTxt
+			+e.number(href=`tel:${telHref}`)=tel
