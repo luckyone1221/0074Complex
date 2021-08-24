@@ -2,7 +2,7 @@ mixin sContent()
 	// start sContent
 	+b.SECTION.sContent.section#sContent&attributes(attributes)
 		.container
-			.d-none
+			//-.d-none
 				+sContentItem({
 					imgNum: 1,
 					whiteImg: 1,
@@ -139,7 +139,7 @@ mixin sContentItem(data)
 	+e.item(class=`${data.addClasses || ''}`)
 		+e.i-row.row.gx-0
 			+e.content-col.col-lg-auto
-				+e.H2.i-title=data.title
+				+e.i-title(href="#")=data.title
 				+e.links-row.row
 					-for (let link of data.links)
 						.col-auto

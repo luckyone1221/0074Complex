@@ -264,6 +264,18 @@ function eventHandler() {
 			$('.catalog-dd--js').removeClass('active');
 		}
 	});
+	//-
+	$('.mob-tel-js').click(function (){
+		$('.contacts-dd--js').toggleClass('active');
+	});
+	document.addEventListener('click', function (){
+		if (!event.target.closest('.contacts-dd--js') && !event.target.closest('.mob-tel-js')){
+			$('.contacts-dd--js').removeClass('active');
+		}
+	});
+	//-
+
+
 	//
 	$('.free-dd-head-js').click(function () {
 		if (event.target.closest('.hint-js')) return
@@ -363,6 +375,7 @@ function eventHandler() {
 		$('body').toggleClass('fixed2');
 		$('.cat-sb--js').toggleClass('active');
 	});
+
 	//end luckyoneJs
 
 	// modal window

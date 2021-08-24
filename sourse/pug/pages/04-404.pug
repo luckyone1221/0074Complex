@@ -7,23 +7,19 @@ include ../blocks/sAbout/_sAbout.pug
 include ../blocks/sMap/_sMap.pug
 include ../blocks/sCatalog/_sCatalog.pug
 include ../blocks/sProdCard/_sProdCard.pug
+include ../blocks/sContentPage/_sContentPage.pug
+include ../blocks/s404/_s404.pug
 
 block variables
 	- let  mainPage= 'main-page' 
-	- let  bg='03.png'
+	- let  bg='04-576.png'
 
 block title
-	- let  title= '02-catalog'
+	- let  title= ''
 	title= title
 block pagecontent
 	+mob-mnu()
 	+header()
 		+top-nav()
-	+sCatalog({
-		title: 'Формы для искусственного камня ',
-		breadCrumbs: [
-			'Главная',
-			'Усиленные формы Taboss',
-		],
-	})
+	+s404()
 	+footer()

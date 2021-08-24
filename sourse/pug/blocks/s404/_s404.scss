@@ -1,0 +1,100 @@
+// start .s404
+.s404 {
+	--sPT: #{rem(20)};
+	--sPB: #{rem(78)};
+	--sTPB: #{rem(30)};
+	@include media-breakpoint-up(md){
+		--sPT: #{rem(40)};
+		--sPB: #{rem(70)};
+		--sTPB: #{rem(40)};
+	}
+	@include media-breakpoint-up(lg){
+		--sPT: #{rem(60)};
+		--sPB: #{rem(90)};
+		--sTPB: #{rem(40)};
+	}
+	@include media-breakpoint-up(xl){
+		--sPT: #{rem(60)};
+		--sPB: #{rem(98)};
+		--sTPB: #{rem(40)};
+	}
+
+	.section-title{
+		h1{
+			font-size: rem(42);
+			line-height: calc(50/42);
+			@include media-breakpoint-up(md){
+				font-size: rem(36);
+				line-height: calc(43/36);
+			}
+			@include media-breakpoint-up(xl){
+				font-size: rem(42);
+				line-height: calc(50/42);
+			}
+
+			margin-bottom: rem(20);
+		}
+		p{
+			margin-left: auto;
+			margin-right: auto;
+
+			max-width: rem(380);
+			@include media-breakpoint-up(md){
+				max-width: 100%;
+			}
+
+			@include media-breakpoint-down(md){
+				line-height: 1.2;
+			}
+		}
+	}
+	&__img{
+		margin: 0 auto rem(30) auto;
+		@include media-breakpoint-up(md){
+			margin: 0 auto rem(40) auto;
+		}
+
+		max-width: 100%;
+		width: rem(702);
+
+		img{
+			width: 100%;
+			height: auto;
+		}
+	}
+	&__btn{
+		@extend .btn;
+		@extend .btn-outline-success;
+
+		min-width: rem(320);
+		@include media-breakpoint-up(md){
+			min-width: rem(220);
+		}
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+
+		font-weight: 600;
+		font-size: inherit;
+		line-height: inherit;
+		.icon{
+			@include mt();
+			color: var(--icon-col, #{$primary});
+
+			font-size: rem(9);
+			margin-right: rem(15);
+			@include media-breakpoint-up(xl){
+				margin-right: rem(10);
+			}
+		}
+
+		color: $body-color!important;
+		&:hover{
+			--icon-col: #{$body-color};
+		}
+	}
+
+	//
+	&__{}
+	&__{}
+} // end.s404

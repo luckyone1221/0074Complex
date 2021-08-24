@@ -1,0 +1,13 @@
+mixin s404(data)
+	// start s404
+	+b.SECTION.s404.section#s404&attributes(attributes)
+		.container.text-center
+			+b.section-title
+				h1 Страница не найдена
+				p Неправильно набран адрес или такой страницы не существует
+			+e.img
+				img(loading="lazy" src="img/svg/404.svg" alt='')
+			+e.btn(href="/")
+				+icon('chevron-left', 'd-md-none')
+				span Вернуться на главную
+	// end s404

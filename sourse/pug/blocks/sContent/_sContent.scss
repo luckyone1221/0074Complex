@@ -114,7 +114,7 @@
 	&__i-title{
 		width: 100%;
 		font-weight: 600;
-		color: $body-color;
+		color: $body-color!important;
 
 		font-size: rem(36);
 		line-height: calc(43/36);

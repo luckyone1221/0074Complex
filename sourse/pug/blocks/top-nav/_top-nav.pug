@@ -29,7 +29,7 @@ mixin top-nav()
 							+icon('cart')
 							+e.cart-ball 9
 				.col-auto.d-lg-none
-					+e.mob-btn(href="#")
+					+e.mob-btn.mob-tel-js(type="button")
 						+e.cart-img
 							+icon('tell')
 				.col-auto.d-lg-none
@@ -48,7 +48,7 @@ mixin top-nav()
 										.col-auto
 											+contactItem('г. Ивантеева', '+7 (499) 707-9916', '+74997079916')
 								.col-auto.d-none.d-xl-block
-									+e.order-call(href="#") Заказать звонок
+									+e.order-call.link-modal-js(href="#modal-call") Заказать звонок
 						+e.c-box.p-0.align-items-stretch
 							+e.bot-row.row
 								.col-auto
@@ -70,6 +70,7 @@ mixin top-nav()
 											+e.cart-ball 9
 										+e.cart-val.d-none.d-xl-block 988 035 ₽
 	+catalogDD('d-none d-lg-block')
+	+contactsDD('')
 	// end top-nav
 
 mixin catalogDD(addClasses='')
@@ -86,6 +87,15 @@ mixin catalogDD(addClasses='')
 				a(href="#") Малые архитектурные формы
 				a(href="#") Заборные формы
 
+mixin contactsDD(addClasses='d-lg-none')
+	+b.contacts-dd--js(class=addClasses)
+		+e.container.container
+			+e.row.row.justify-content-around
+				.col-auto
+					+contactItem('г. Щербинка', '+7 (495) 648-8373', '+74956488373')
+				.col-auto
+					+contactItem('г. Ивантеева', '+7 (499) 707-9916', '+74997079916')
+
 mixin tnSearch()
 	+b.search-bl
 		.input-group
@@ -98,6 +108,6 @@ mixin contactItem(grayTxt, tel, telHref)
 		.col-auto
 			+e.icon(href=`tel:${telHref}`)
 				img(loading="lazy" src="img/svg/tn-soc-wa.svg" alt="")
-		.col
+		+e.txt-col.col
 			+e.gray=grayTxt
 			+e.number(href=`tel:${telHref}`)=tel
