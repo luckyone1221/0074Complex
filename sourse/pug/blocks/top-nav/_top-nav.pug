@@ -17,10 +17,10 @@ mixin mob-mnu()
 mixin top-nav() 
 	// start top-nav
 	+b.top-nav--js.block-with-lazy
-		.container-lg
+		.container
 			+e.main-row.row
 				+e.left-col.col.col-lg-auto
-					+e.logo(href="#")
+					+e.logo(href="/")
 						img.d-none.d-lg-inline(loading="lazy" src="img/svg/logo.svg" alt="")
 						img.d-lg-none(loading="lazy" src="img/svg/logo-sm.svg" alt="")
 				.col-auto.d-lg-none

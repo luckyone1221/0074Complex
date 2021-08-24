@@ -537,6 +537,8 @@ input.form-control{
 }
 
 .btn{
+	box-shadow: none!important;
+
 	font-weight: 600;
 	font-size: inherit;
 	line-height: inherit;
@@ -718,17 +720,25 @@ input.form-control{
 	padding: 0;
 
 	li{
-		display: flex;
-		align-items: baseline;
+		position: relative;
+		z-index: 1;
+		padding-left: rem(15);
 
 		&:before{
+			position: absolute;
+			top: rem(10);
+			@include media-breakpoint-up(md){
+				top: rem(7);
+			}
+			@include media-breakpoint-up(xl){
+				top: rem(10);
+			}
+			left: 0;
 			flex-shrink: 0;
 			content: '';
 			width: rem(5);
 			height: rem(5);
-			transform: translateY(-60%);
 
-			margin-right: rem(10);
 			border-radius: 50%;
 			background-color: $primary;
 		}
@@ -737,4 +747,10 @@ input.form-control{
 			margin-bottom: 0;
 		}
 	}
+}
+//
+.fancybox__container{
+	z-index: 10000;
+
+	--carousel-button-svg-filter: none!important;
 }

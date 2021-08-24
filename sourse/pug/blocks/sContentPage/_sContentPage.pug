@@ -42,7 +42,9 @@ mixin sContentPage(data)
 					+e.soc-row.row.align-items-center.justify-content-center.justify-content-md-start
 						+e.share-txt-col.col-auto Поделиться:
 						.col-auto
-							+e.soc-sub-row.row
+							| <script src="https://yastatic.net/share2/share.js"></script>
+							| <div class="ya-share2" data-curtain data-shape="round" data-services="vkontakte,facebook,odnoklassniki,telegram,twitter"></div>
+							//-+e.soc-sub-row.row
 								+sContentPageSoc('tg')
 								+sContentPageSoc('tw')
 								+sContentPageSoc('fb')

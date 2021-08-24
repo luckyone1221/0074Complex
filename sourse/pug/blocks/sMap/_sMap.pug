@@ -5,7 +5,7 @@ mixin sMap(data)
 			+b.section-title.text-lg-center
 				h2 Связаться с нами
 			+e.main-row.row
-				+e.left-col.col-lg-6
+				.col-lg-6
 					+e.row.row
 						+sMapItem('Адрес:', 'г. Щербинка, ул. Южная, 12')()
 						+sMapItem('Адрес:', 'г. Ивантеевка, ул. Трудовая, д. 3')()
@@ -15,7 +15,7 @@ mixin sMap(data)
 						+sMapItem('E-mail:', 'complexpro5@mail.ru')(href="mailto:complexpro5@mail.ru")
 						.col-auto.col-xl-6
 							+iconBtn('Заказать звонок')(href="#modal-call" class="btn btn-success link-modal-js")
-				.col-lg
+				.col-lg-6
 					+e.map-box#map
 
 	// end sMap

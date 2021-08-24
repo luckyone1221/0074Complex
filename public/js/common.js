@@ -200,6 +200,13 @@ function eventHandler() {
 		if (!event.target.closest('.contacts-dd--js') && !event.target.closest('.mob-tel-js')) {
 			$('.contacts-dd--js').removeClass('active');
 		}
+	});
+	window.addEventListener('resize', () => {
+		if (window.matchMedia("(min-width: 992px)").matches) {
+			$('.contacts-dd--js, .catalog-dd--js').removeClass('active');
+		}
+	}, {
+		passive: true
 	}); //-
 	//
 
@@ -222,7 +229,14 @@ function eventHandler() {
 			ymaps.ready(function () {
 				var myMap = new ymaps.Map('map', {
 					center: [55.751574, 37.573856],
-					zoom: 9
+					zoom: 9,
+					controls: {// geolocationControl: false,
+						// searchControl: false,
+						// trafficControl: false,
+						// typeSelector: false,
+						// fullscreenControl: false,
+						// rulerControl: false,
+					}
 				}, {
 					searchControlProvider: 'yandex#search'
 				}),
@@ -247,6 +261,7 @@ function eventHandler() {
 					iconImageOffset: [0, 0]
 				});
 				myMap.geoObjects.add(myPlacemark);
+				myMap.behaviors.disable(['scrollZoom']);
 			});
 		}, 1000);
 	}, 2000); //
