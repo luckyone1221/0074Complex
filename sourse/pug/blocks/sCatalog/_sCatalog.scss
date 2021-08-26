@@ -296,6 +296,13 @@
 				background-size: contain;
 			}
 		}
+
+		&--sub{
+			padding-left: rem(24);
+			@include media-breakpoint-up(xl){
+				padding-left: rem(30);
+			}
+		}
 	}
 	&__dd-content{
 		& > *{

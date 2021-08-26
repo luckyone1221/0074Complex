@@ -63,7 +63,11 @@ mixin sCatalogSidebar()
 			span Закрыть
 		+e.dd-items
 			+sCatalogSidebarItem('Усиленные формы Taboss')
-			+sCatalogSidebarItem('Пластиковые формы Alpha', 'active')
+			//-+sCatalogSidebarItem('Пластиковые формы Alpha', 'active')
+			+e.dd-item
+				+e.link(href='#') Формы РФ
+			+e.dd-item
+				+e.link(href='#') Полиуретановые формы
 			+sCatalogSidebarItem('Пигменты и красители')
 			+sCatalogSidebarItem('Добавки в бетон-пластификаторы')
 			+sCatalogSidebarItem('Дополнительные материалы и оборудование')
@@ -74,5 +78,5 @@ mixin sCatalogSidebarItem(txt, activeClasses='')
 	+e.dd-item(class=activeClasses)
 		+e.link--dd-head.dd-head-js=txt
 		+e.dd-content.dd-content-js(class=activeClasses)
-			+e.link(href="#") Формы РФ
-			+e.link(href="#") Полиуретановые формы
+			+e.link--sub(href="#") sub-item
+			+e.link--sub(href="#") sub-item-2
